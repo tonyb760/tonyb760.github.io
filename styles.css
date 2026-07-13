@@ -14,7 +14,7 @@
   --black: #040506;
   --mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas, monospace;
   --sans: Inter, "Helvetica Neue", Arial, sans-serif;
-  --max: 1440px;
+  --max: 1520px;
   --side: clamp(22px, 5vw, 82px);
   --radius: 2px;
 }
