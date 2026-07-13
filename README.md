@@ -1,84 +1,40 @@
-# Bhavesh Manhar // Red Team Portfolio
+# 0xTonyb // Red Team Portfolio
 
-A zero-build, GitHub Pages-ready portfolio for **Bhavesh Manhar / 0xTonyb**.
+The personal portfolio of **Bhavesh Manhar (0xTonyb)**, a Red Team Operator focused on offensive security, adversary simulation, identity attack paths, and AI security.
 
-## Design direction
+The site presents:
 
-Graphite operator-console aesthetic with restrained red threat indicators, custom responsive layouts, a capability console, a deliberately redacted BlackMagic R&D section, public field notes and an interactive terminal Easter egg.
+- Red team operations and areas of focus
+- Offensive security capabilities
+- An evidence-driven testing methodology
+- A public overview of BlackMagic security R&D
+- Field notes and security research
+- Contact and professional profile links
 
-## Run locally
+Visit the portfolio at [tonyb760.github.io](https://tonyb760.github.io/).
 
-No package install is needed.
+## Terminal Easter egg
 
-Open `index.html` directly in a browser, or serve the folder with Python:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open:
-
-```text
-http://127.0.0.1:8000
-```
-
-## Operator console
-
-Press:
+Open the hidden operator console by pressing:
 
 ```text
 Ctrl + `
 ```
 
-Or type `blackmagic` while the page is focused.
+You can also type `blackmagic` anywhere while the page is focused.
 
-Available commands:
-
-```text
-help
-whoami
-operations
-skills
-methodology
-blackmagic
-fieldnotes
-github
-contact
-clear
-exit
-```
-
-## Deploy to GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload the contents of this folder to the repository root.
-3. In GitHub, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select your default branch and `/ (root)`.
-6. Save.
-
-The site uses relative paths, so it works from a GitHub Pages repository subpath.
-
-## Public-data choices
-
-- Headline name: Bhavesh Manhar
-- Callsign: 0xTonyb
-- GitHub: `github.com/tonyb760`
-- LinkedIn: `linkedin.com/in/bhavesh-patel760/`
-- Public BlackMagic content is intentionally high-level.
-- BlackMagic internals, implementation details, architecture and repository remain redacted/private.
-- The phone number from the CV is intentionally **not** published in the site.
-- The current employer name is intentionally de-emphasised in the public operation record; the portfolio focuses on capability and impact.
-
-## Files
+### Commands
 
 ```text
-.
-├── index.html
-├── styles.css
-├── script.js
-├── .nojekyll
-└── assets
-    ├── bhavesh-manhar.webp
-    └── favicon.svg
+help          Show available commands
+whoami        Display the operator profile
+operations    Show the current offensive focus
+skills        Display the capability map
+methodology   Show the decision loop
+blackmagic    Display the public R&D overview
+fieldnotes    List public research
+github        Open the GitHub profile
+contact       Show contact channels
+clear         Clear the console
+exit          Close the console
 ```
