@@ -42,10 +42,12 @@
   setTimeout(typeRole, 1600);
 
   const menuButton = document.querySelector(".menu-button");
+  const menuButtonLabel = document.getElementById("menu-button-label");
   const mobileNav = document.getElementById("mobile-nav");
 
   function closeMenu() {
     menuButton?.setAttribute("aria-expanded", "false");
+    if (menuButtonLabel) menuButtonLabel.textContent = "Open menu";
     mobileNav?.classList.remove("is-open");
     document.body.classList.remove("menu-open");
   }
@@ -53,6 +55,7 @@
   menuButton?.addEventListener("click", () => {
     const expanded = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", String(!expanded));
+    if (menuButtonLabel) menuButtonLabel.textContent = expanded ? "Open menu" : "Close menu";
     mobileNav.classList.toggle("is-open", !expanded);
     document.body.classList.toggle("menu-open", !expanded);
   });
@@ -76,24 +79,41 @@
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
-  const tabs = document.querySelectorAll(".surface-tab");
+  const tabs = [...document.querySelectorAll(".surface-tab")];
   const panels = document.querySelectorAll(".surface-panel");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const targetId = tab.dataset.panel;
+  function activateTab(tab, moveFocus = false) {
+    const targetId = tab.dataset.panel;
 
-      tabs.forEach((candidate) => {
-        const active = candidate === tab;
-        candidate.classList.toggle("is-active", active);
-        candidate.setAttribute("aria-selected", String(active));
-      });
+    tabs.forEach((candidate) => {
+      const active = candidate === tab;
+      candidate.classList.toggle("is-active", active);
+      candidate.setAttribute("aria-selected", String(active));
+      candidate.tabIndex = active ? 0 : -1;
+    });
 
-      panels.forEach((panel) => {
-        const active = panel.id === targetId;
-        panel.hidden = !active;
-        panel.classList.toggle("is-active", active);
-      });
+    panels.forEach((panel) => {
+      const active = panel.id === targetId;
+      panel.hidden = !active;
+      panel.classList.toggle("is-active", active);
+    });
+
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      let nextIndex;
+
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = tabs.length - 1;
+      if (nextIndex === undefined) return;
+
+      event.preventDefault();
+      activateTab(tabs[nextIndex], true);
     });
   });
 
@@ -206,17 +226,26 @@
   };
 
   let previousFocus = null;
+  const pageRegions = document.querySelectorAll("body > header, body > main, body > footer");
+
+  function setPageInert(inert) {
+    pageRegions.forEach((region) => {
+      region.inert = inert;
+    });
+  }
 
   function openTerminal() {
     if (!overlay.hidden) return;
     previousFocus = document.activeElement;
     overlay.hidden = false;
+    setPageInert(true);
     document.body.classList.add("terminal-open");
     requestAnimationFrame(() => terminalInput.focus());
   }
 
   function closeTerminal() {
     overlay.hidden = true;
+    setPageInert(false);
     document.body.classList.remove("terminal-open");
     previousFocus?.focus?.();
   }
@@ -290,13 +319,19 @@
       return;
     }
 
+    if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+      menuButton.focus();
+      return;
+    }
+
     if (event.ctrlKey && event.key === "`") {
       event.preventDefault();
       overlay.hidden ? openTerminal() : closeTerminal();
       return;
     }
 
-    if (!overlay.hidden) return;
+    if (!overlay.hidden || event.target.closest?.("input, textarea, select, [contenteditable='true']")) return;
 
     if (event.key.length === 1 && /[a-z]/i.test(event.key)) {
       easterEgg = (easterEgg + event.key.toLowerCase()).slice(-targetSequence.length);
