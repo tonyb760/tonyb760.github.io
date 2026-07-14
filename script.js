@@ -117,6 +117,115 @@
     });
   });
 
+  const methodSteps = {
+    observe: {
+      index: "DECISION / 01",
+      coreTitle: "OBSERVE",
+      coreNote: "SIGNAL BEFORE HYPOTHESIS",
+      prompt: "What did the environment expose?",
+      inputTitle: "RAW SIGNALS",
+      inputCopy: "Responses, routes, identities, service behaviour and environmental context.",
+      decisionTitle: "SEPARATE SIGNAL FROM NOISE",
+      decisionCopy: "Determine what is real, relevant and worth carrying into the working model.",
+      outputTitle: "VERIFIED OBSERVATIONS",
+      outputCopy: "Timestamped observations with scope, source and enough context to reproduce them."
+    },
+    model: {
+      index: "DECISION / 02",
+      coreTitle: "MODEL",
+      coreNote: "CONTEXT CREATES MEANING",
+      prompt: "Why did that evidence matter?",
+      inputTitle: "VERIFIED CONTEXT",
+      inputCopy: "Confirmed observations, dependencies, identities and known environmental constraints.",
+      decisionTitle: "MAP TRUST AND DEPENDENCIES",
+      decisionCopy: "Connect the evidence to boundaries, assumptions and plausible paths through the system.",
+      outputTitle: "RANKED HYPOTHESES",
+      outputCopy: "A system model with candidate paths ordered by relevance, impact and confidence."
+    },
+    validate: {
+      index: "DECISION / 03",
+      coreTitle: "VALIDATE",
+      coreNote: "PROOF OVER ASSUMPTION",
+      prompt: "Which hypothesis survived validation?",
+      inputTitle: "RANKED HYPOTHESES",
+      inputCopy: "Candidate paths with their assumptions, expected signals and confidence levels.",
+      decisionTitle: "TEST THE SMALLEST SAFE STEP",
+      decisionCopy: "Choose a controlled action that can confirm or refute the path without unnecessary exposure.",
+      outputTitle: "REPRODUCIBLE PROOF",
+      outputCopy: "Evidence tied directly to the hypothesis, including both positive and negative results."
+    },
+    document: {
+      index: "DECISION / 04",
+      coreTitle: "DOCUMENT",
+      coreNote: "PRESERVE THE CHAIN",
+      prompt: "What trust boundary failed?",
+      inputTitle: "VALIDATED EVIDENCE",
+      inputCopy: "Commands, responses, screenshots, system context and the limits of what was tested.",
+      decisionTitle: "PRESERVE PROVENANCE AND IMPACT",
+      decisionCopy: "Explain how each step connects, what it proves and where uncertainty remains.",
+      outputTitle: "TRACEABLE FINDING",
+      outputCopy: "A defensible record another operator or defender can understand and reproduce."
+    },
+    improve: {
+      index: "DECISION / 05",
+      coreTitle: "IMPROVE",
+      coreNote: "FEED THE NEXT LOOP",
+      prompt: "How could a defender detect or prevent the chain?",
+      inputTitle: "VALIDATED ATTACK PATH",
+      inputCopy: "The confirmed chain, affected controls, observable signals and operational context.",
+      decisionTitle: "TRANSLATE OFFENSE INTO DEFENSE",
+      decisionCopy: "Prioritize changes that break the path, improve visibility and reduce future uncertainty.",
+      outputTitle: "DEFENSIVE ACTION",
+      outputCopy: "Focused remediation, detection guidance and a stronger model for the next cycle."
+    }
+  };
+
+  const methodButtons = [...document.querySelectorAll("[data-method-step]")];
+  const methodFields = {
+    index: document.getElementById("method-index"),
+    coreTitle: document.getElementById("method-core-title"),
+    coreNote: document.getElementById("method-core-note"),
+    prompt: document.getElementById("method-prompt"),
+    inputTitle: document.getElementById("method-input-title"),
+    inputCopy: document.getElementById("method-input-copy"),
+    decisionTitle: document.getElementById("method-decision-title"),
+    decisionCopy: document.getElementById("method-decision-copy"),
+    outputTitle: document.getElementById("method-output-title"),
+    outputCopy: document.getElementById("method-output-copy")
+  };
+
+  function activateMethod(button, moveFocus = false) {
+    const step = methodSteps[button.dataset.methodStep];
+
+    methodButtons.forEach((candidate) => {
+      const active = candidate === button;
+      candidate.classList.toggle("is-active", active);
+      candidate.setAttribute("aria-pressed", String(active));
+    });
+
+    Object.entries(methodFields).forEach(([field, element]) => {
+      if (element) element.textContent = step[field];
+    });
+
+    if (moveFocus) button.focus();
+  }
+
+  methodButtons.forEach((button, index) => {
+    button.addEventListener("click", () => activateMethod(button));
+    button.addEventListener("keydown", (event) => {
+      let nextIndex;
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % methodButtons.length;
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + methodButtons.length) % methodButtons.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = methodButtons.length - 1;
+      if (nextIndex === undefined) return;
+
+      event.preventDefault();
+      activateMethod(methodButtons[nextIndex], true);
+    });
+  });
+
   const portraitFrame = document.getElementById("portrait-frame");
   const portraitStage = document.querySelector(".portrait-stage");
 
@@ -218,9 +327,8 @@
     fieldnotes: [
       "PUBLIC FIELD NOTES",
       "",
-      "01  Fireflow       Langflow / JWT / MCP / Kubernetes",
-      "02  HTB Machines    Evidence-driven retired-machine notes",
-      "03  WebVerse Pro    Public build and iteration workspace",
+      "01  HTB Machines    Evidence-driven retired-machine notes",
+      "02  WebVerse Pro    Public build and iteration workspace",
       "",
       "github.com/tonyb760"
     ].join("\n"),

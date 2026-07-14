@@ -476,14 +476,14 @@
 
         <article class="impact-card" data-reveal>
           <span>IMPACT / 01</span>
-          <strong>60%</strong>
+          <strong>85%</strong>
           <h3>PRIVILEGE ESCALATION RISK REDUCTION</h3>
           <p>Measured after targeted red-blue exercises and hardening of validated misconfigurations.</p>
         </article>
 
         <article class="impact-card" data-reveal>
           <span>IMPACT / 02</span>
-          <strong>15%</strong>
+          <strong>70%</strong>
           <h3>SECURITY POSTURE IMPROVEMENT</h3>
           <p>Measured after reducing attack-surface and indicator exposure over three months.</p>
         </article>
@@ -524,18 +524,6 @@
       </div>
 
       <div class="field-grid">
-        <a class="field-card field-featured" href="https://github.com/tonyb760/HTB-Machines/blob/main/Fireflow.md" target="_blank" rel="noopener noreferrer" data-reveal>
-          <div class="field-card-top">
-            <span>ATTACK-CHAIN ANALYSIS / PUBLIC</span><span>↗</span>
-          </div>
-          <div class="field-visual fireflow-visual" aria-hidden="true">
-            <span>LANGFLOW</span><i></i><span>JWT</span><i></i><span>MCP</span><i></i><span>K8S</span>
-          </div>
-          <h3>FIREFLOW</h3>
-          <p>Langflow RCE chain through JWT, MCP and Kubernetes escalation to host root.</p>
-          <div class="field-tags"><span>LINUX</span><span>AI</span><span>JWT</span><span>KUBERNETES</span></div>
-        </a>
-
         <a class="field-card" href="https://github.com/tonyb760/HTB-Machines" target="_blank" rel="noopener noreferrer" data-reveal>
           <div class="field-card-top">
             <span>KNOWLEDGE BASE / PUBLIC</span><span>↗</span>
@@ -581,43 +569,48 @@
         </div>
 
         <div class="method-grid">
-          <div class="method-loop" data-reveal aria-label="Observe, model, validate, document, improve methodology loop">
+          <div class="method-loop" data-reveal aria-label="Interactive observe, model, validate, document and improve methodology loop">
             <svg viewBox="0 0 600 600" role="img" aria-hidden="true">
               <circle cx="300" cy="300" r="224" class="loop-track"/>
               <circle cx="300" cy="300" r="224" class="loop-progress"/>
             </svg>
-            <div class="method-core">
-              <span>THE LOOP</span>
-              <strong>REPEAT</strong>
-              <small>UNTIL THE MODEL IMPROVES</small>
+            <div class="method-core" aria-hidden="true">
+              <span>ACTIVE PHASE</span>
+              <strong id="method-core-title">OBSERVE</strong>
+              <small id="method-core-note">SIGNAL BEFORE HYPOTHESIS</small>
             </div>
-            <span class="method-node method-n1"><b>01</b>OBSERVE</span>
-            <span class="method-node method-n2"><b>02</b>MODEL</span>
-            <span class="method-node method-n3"><b>03</b>VALIDATE</span>
-            <span class="method-node method-n4"><b>04</b>DOCUMENT</span>
-            <span class="method-node method-n5"><b>05</b>IMPROVE</span>
+            <button class="method-node method-n1 is-active" type="button" data-method-step="observe" aria-pressed="true"><b>01</b>OBSERVE</button>
+            <button class="method-node method-n2" type="button" data-method-step="model" aria-pressed="false"><b>02</b>MODEL</button>
+            <button class="method-node method-n3" type="button" data-method-step="validate" aria-pressed="false"><b>03</b>VALIDATE</button>
+            <button class="method-node method-n4" type="button" data-method-step="document" aria-pressed="false"><b>04</b>DOCUMENT</button>
+            <button class="method-node method-n5" type="button" data-method-step="improve" aria-pressed="false"><b>05</b>IMPROVE</button>
           </div>
 
-          <div class="method-copy" data-reveal>
-            <div class="method-question">
-              <span>Q / 01</span>
-              <p>What did the environment expose?</p>
+          <div class="method-copy" id="method-detail" data-reveal aria-live="polite">
+            <div class="method-detail-header">
+              <span id="method-index">DECISION / 01</span>
+              <small>SELECT A PHASE TO INSPECT</small>
             </div>
-            <div class="method-question">
-              <span>Q / 02</span>
-              <p>Why did that evidence matter?</p>
+            <p class="method-prompt" id="method-prompt">What did the environment expose?</p>
+            <div class="method-readout-grid">
+              <article>
+                <span>INPUT</span>
+                <strong id="method-input-title">RAW SIGNALS</strong>
+                <p id="method-input-copy">Responses, routes, identities, service behaviour and environmental context.</p>
+              </article>
+              <article>
+                <span>OPERATOR DECISION</span>
+                <strong id="method-decision-title">SEPARATE SIGNAL FROM NOISE</strong>
+                <p id="method-decision-copy">Determine what is real, relevant and worth carrying into the working model.</p>
+              </article>
+              <article>
+                <span>EVIDENCE PRODUCED</span>
+                <strong id="method-output-title">VERIFIED OBSERVATIONS</strong>
+                <p id="method-output-copy">Timestamped observations with scope, source and enough context to reproduce them.</p>
+              </article>
             </div>
-            <div class="method-question">
-              <span>Q / 03</span>
-              <p>Which hypothesis survived validation?</p>
-            </div>
-            <div class="method-question">
-              <span>Q / 04</span>
-              <p>What trust boundary failed?</p>
-            </div>
-            <div class="method-question">
-              <span>Q / 05</span>
-              <p>How could a defender detect or prevent the chain?</p>
+            <div class="method-trace" aria-label="Methodology progression">
+              <span>SIGNAL</span><i>→</i><span>HYPOTHESIS</span><i>→</i><span>PROOF</span><i>→</i><span>DECISION</span>
             </div>
           </div>
         </div>
