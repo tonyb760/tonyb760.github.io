@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://tonyb760.github.io/assets/bhavesh-manhar.webp" />
   <title>Bhavesh Manhar // Red Team Operator</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=20260714-3" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,7 +42,7 @@
     }
   </script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -579,11 +579,11 @@
               <strong id="method-core-title">OBSERVE</strong>
               <small id="method-core-note">SIGNAL BEFORE HYPOTHESIS</small>
             </div>
-            <button class="method-node method-n1 is-active" type="button" data-method-step="observe" aria-pressed="true"><b>01</b>OBSERVE</button>
-            <button class="method-node method-n2" type="button" data-method-step="model" aria-pressed="false"><b>02</b>MODEL</button>
-            <button class="method-node method-n3" type="button" data-method-step="validate" aria-pressed="false"><b>03</b>VALIDATE</button>
-            <button class="method-node method-n4" type="button" data-method-step="document" aria-pressed="false"><b>04</b>DOCUMENT</button>
-            <button class="method-node method-n5" type="button" data-method-step="improve" aria-pressed="false"><b>05</b>IMPROVE</button>
+            <button class="method-node method-n1 is-active" type="button" data-method-step="observe" aria-pressed="true" aria-controls="method-detail"><b>01</b>OBSERVE</button>
+            <button class="method-node method-n2" type="button" data-method-step="model" aria-pressed="false" aria-controls="method-detail"><b>02</b>MODEL</button>
+            <button class="method-node method-n3" type="button" data-method-step="validate" aria-pressed="false" aria-controls="method-detail"><b>03</b>VALIDATE</button>
+            <button class="method-node method-n4" type="button" data-method-step="document" aria-pressed="false" aria-controls="method-detail"><b>04</b>DOCUMENT</button>
+            <button class="method-node method-n5" type="button" data-method-step="improve" aria-pressed="false" aria-controls="method-detail"><b>05</b>IMPROVE</button>
           </div>
 
           <div class="method-copy" id="method-detail" data-reveal aria-live="polite">
@@ -702,7 +702,7 @@
       <span>I DOCUMENT THE PATH, NOT JUST THE PROOF.</span>
     </div>
     <button type="button" id="console-launch">OPEN CONSOLE <span>CTRL + `</span></button>
-    <a href="#top">BACK TO TOP ↑</a>
+    <a href="#top" id="back-to-top">BACK TO TOP ↑</a>
   </footer>
 
   <div class="terminal-overlay" id="terminal-overlay" hidden>
@@ -726,6 +726,6 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=20260714-2"></script>
 </body>
 </html>

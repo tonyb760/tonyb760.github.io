@@ -64,6 +64,14 @@
     link.addEventListener("click", closeMenu);
   });
 
+  const backToTop = document.getElementById("back-to-top");
+
+  backToTop?.addEventListener("click", (event) => {
+    event.preventDefault();
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, left: 0, behavior: reducedMotion ? "auto" : "smooth" });
+  });
+
   const revealItems = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
