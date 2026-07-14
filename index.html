@@ -359,62 +359,91 @@
 
         <div class="blackmagic-grid">
           <div class="blackmagic-copy" data-reveal>
-            <span class="project-type">LOCAL AI-ASSISTED OFFENSIVE SECURITY PLATFORM</span>
+            <span class="project-type">LOCAL-FIRST / HUMAN-CONTROLLED / OFFENSIVE SECURITY R&amp;D</span>
             <p class="blackmagic-lead">
-              An experimental Kali-native operator platform exploring how AI agents,
-              knowledge systems and security tooling can support human-led offensive workflows.
+              BlackMagic is the operating layer I am building to turn fragmented security tools,
+              specialist knowledge and live evidence into one operator-led workflow.
             </p>
             <p>
-              Public overview only. BlackMagic spans research into reconnaissance,
-              web and API workflows, identity analysis, evidence capture and reusable
-              knowledge — while keeping live execution local and operator-controlled.
+              It does not replace judgment. It helps an operator move from reconnaissance to
+              validated findings without losing context, provenance or control. This public view
+              exposes the operating model — not the machinery behind it.
             </p>
 
             <div class="classification-table">
               <div><span>STATUS</span><strong>ACTIVE RESEARCH</strong></div>
               <div><span>EXECUTION</span><strong>LOCAL-FIRST</strong></div>
-              <div><span>CONTROL</span><strong>HUMAN OPERATOR</strong></div>
+              <div><span>AUTHORITY</span><strong>HUMAN CHECKPOINTS</strong></div>
+              <div><span>DISCLOSURE</span><strong>SURFACE ONLY</strong></div>
               <div><span>REPOSITORY</span><strong>[ PRIVATE ]</strong></div>
             </div>
           </div>
 
           <div class="architecture-panel" data-reveal>
             <div class="architecture-header">
-              <span>BM / PUBLIC ARCHITECTURE</span>
-              <span>OVERVIEW MODE</span>
+              <span>BM / DECLASSIFIED SYSTEM MAP</span>
+              <span>CLEARANCE 01</span>
             </div>
 
             <div class="architecture-map" aria-label="Public high-level BlackMagic architecture">
-              <div class="arch-node arch-operator">HUMAN OPERATOR</div>
+              <div class="arch-node arch-operator">
+                <strong>HUMAN OPERATOR</strong>
+                <small>AUTHORITY / CHECKPOINTS</small>
+              </div>
               <span class="arch-link link-v link-1"></span>
               <div class="arch-core">
                 <span>BLACKMAGIC</span>
-                <small>OPERATOR PLATFORM</small>
+                <small>OPERATIONS LAYER</small>
               </div>
               <span class="arch-link link-v link-2"></span>
               <span class="arch-link link-h link-3"></span>
-              <div class="arch-node arch-recon">RECON</div>
-              <div class="arch-node arch-web">WEB / API</div>
-              <div class="arch-node arch-id">IDENTITY</div>
-              <div class="arch-redacted">
-                <span>████████████████</span>
-                <strong>REDACTED</strong>
-                <small>PRIVATE R&D COMPONENTS</small>
+              <div class="arch-node arch-recon">
+                <strong>RECON</strong>
+                <small>SURFACE MAPPING</small>
               </div>
-              <div class="arch-node arch-evidence">EVIDENCE / KNOWLEDGE</div>
+              <div class="arch-node arch-web">
+                <strong>WEB / API</strong>
+                <small>WORKFLOW TESTING</small>
+              </div>
+              <div class="arch-node arch-id">
+                <strong>IDENTITY</strong>
+                <small>PATH ANALYSIS</small>
+              </div>
+              <button class="arch-orchestration" type="button" aria-expanded="false">
+                <span class="sr-only">
+                  Restricted orchestration layer. Toggle declassified fragments: state-aware routing,
+                  specialist dispatch and evidence validation.
+                </span>
+                <span class="orchestration-heading" aria-hidden="true">
+                  <strong>RESTRICTED ORCHESTRATION LAYER</strong>
+                  <small>PRESS / HOVER TO DECLASSIFY FRAGMENTS</small>
+                </span>
+                <span class="orchestration-fragments" aria-hidden="true">
+                  <span><b>STATE-AWARE</b><i>ROUTING</i></span>
+                  <span><b>SPECIALIST</b><i>DISPATCH</i></span>
+                  <span><b>EVIDENCE</b><i>VALIDATION</i></span>
+                </span>
+              </button>
+              <div class="arch-node arch-evidence">
+                <strong>EVIDENCE / KNOWLEDGE</strong>
+                <small>TRACEABLE OUTPUT</small>
+              </div>
             </div>
 
             <div class="redaction-note">
-              <span>ACCESS RESTRICTED</span>
-              <p>Implementation details, internal architecture and active R&D components withheld.</p>
+              <span>DISCLOSURE BOUNDARY</span>
+              <p>Capabilities are public. Decision logic, implementation details and active R&amp;D remain withheld.</p>
             </div>
           </div>
         </div>
 
-        <div class="redacted-strip" aria-hidden="true">
-          <span>BM_INTERNAL_01</span><b></b><span>████████████</span><b></b>
-          <span>OPERATOR_CHECKPOINT</span><b></b><span>██████████████████</span>
+        <div class="declassification-strip" aria-label="Declassified BlackMagic attributes">
+          <span><small>01</small>LOCAL-FIRST EXECUTION</span>
+          <span><small>02</small>OPERATOR CHECKPOINTS</span>
+          <span><small>03</small>EVIDENCE CORRELATION</span>
+          <span><small>04</small>REPOSITORY [ PRIVATE ]</span>
         </div>
+        <p class="blackmagic-signoff" data-reveal>The interface is visible. <strong>The machinery is not.</strong></p>
       </div>
     </section>
 

@@ -138,6 +138,13 @@
     });
   }
 
+  const orchestrationLayer = document.querySelector(".arch-orchestration");
+
+  orchestrationLayer?.addEventListener("click", () => {
+    const disclosed = orchestrationLayer.classList.toggle("is-disclosed");
+    orchestrationLayer.setAttribute("aria-expanded", String(disclosed));
+  });
+
   const overlay = document.getElementById("terminal-overlay");
   const output = document.getElementById("terminal-output");
   const terminalForm = document.getElementById("terminal-form");
@@ -196,16 +203,17 @@
     ].join("\n"),
     blackmagic: [
       "PROJECT        BLACKMAGIC",
-      "TYPE           PRIVATE R&D",
-      "DOMAIN         AI x OFFENSIVE SECURITY",
+      "TYPE           PRIVATE OFFENSIVE SECURITY R&D",
       "EXECUTION      LOCAL-FIRST",
-      "CONTROL        HUMAN OPERATOR",
+      "AUTHORITY      HUMAN CHECKPOINTS",
+      "PUBLIC LAYERS  RECON / WEB + API / IDENTITY",
       "",
-      "ARCHITECTURE   [ REDACTED ]",
-      "INTERNALS      [ REDACTED ]",
+      "ORCHESTRATION  [ PARTIALLY DECLASSIFIED ]",
+      "DECISION LOGIC [ WITHHELD ]",
+      "OUTPUT         TRACEABLE EVIDENCE",
       "REPOSITORY     PRIVATE",
       "",
-      "PUBLIC OVERVIEW AVAILABLE."
+      "THE INTERFACE IS VISIBLE. THE MACHINERY IS NOT."
     ].join("\n"),
     fieldnotes: [
       "PUBLIC FIELD NOTES",
