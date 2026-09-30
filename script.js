@@ -10,7 +10,11 @@
   let charIndex = roles[0].length;
   let deleting = true;
 
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let roleTimer;
+
   function typeRole() {
+    if (!roleText || motionPreference.matches) return;
     const role = roles[roleIndex];
 
     if (deleting) {
@@ -19,10 +23,10 @@
       if (charIndex <= 0) {
         deleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeRole, 280);
+        roleTimer = setTimeout(typeRole, 280);
         return;
       }
-      setTimeout(typeRole, 28);
+      roleTimer = setTimeout(typeRole, 28);
       return;
     }
 
@@ -32,14 +36,22 @@
 
     if (charIndex >= nextRole.length) {
       deleting = true;
-      setTimeout(typeRole, 1800);
+      roleTimer = setTimeout(typeRole, 1800);
       return;
     }
 
-    setTimeout(typeRole, 54);
+    roleTimer = setTimeout(typeRole, 54);
   }
 
-  setTimeout(typeRole, 1600);
+  if (roleText && !motionPreference.matches) roleTimer = setTimeout(typeRole, 1600);
+  motionPreference.addEventListener("change", () => {
+    clearTimeout(roleTimer);
+    roleIndex = 0;
+    charIndex = roles[0].length;
+    deleting = true;
+    if (roleText) roleText.textContent = roles[0];
+    if (!motionPreference.matches) roleTimer = setTimeout(typeRole, 1600);
+  });
 
   const menuButton = document.querySelector(".menu-button");
   const menuButtonLabel = document.getElementById("menu-button-label");
@@ -64,6 +76,10 @@
     link.addEventListener("click", closeMenu);
   });
 
+  window.matchMedia("(min-width: 861px)").addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
+  });
+
   const backToTop = document.getElementById("back-to-top");
 
   backToTop?.addEventListener("click", (event) => {
@@ -82,7 +98,10 @@
       });
     }, { threshold: 0.12 });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+    revealItems.forEach((item) => {
+      item.classList.add("reveal-pending");
+      revealObserver.observe(item);
+    });
   } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
@@ -399,7 +418,7 @@
   };
 
   let previousFocus = null;
-  const pageRegions = document.querySelectorAll("body > header, body > main, body > footer");
+  const pageRegions = document.querySelectorAll("body > .skip-link, body > header, body > main, body > footer");
 
   function setPageInert(inert) {
     pageRegions.forEach((region) => {
@@ -410,6 +429,7 @@
   function openTerminal() {
     if (!overlay.hidden) return;
     previousFocus = document.activeElement;
+    closeMenu();
     overlay.hidden = false;
     setPageInert(true);
     document.body.classList.add("terminal-open");
@@ -481,6 +501,21 @@
 
   overlay?.addEventListener("click", (event) => {
     if (event.target === overlay) closeTerminal();
+  });
+
+  overlay?.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const focusable = [...overlay.querySelectorAll("button, input")].filter((element) => !element.disabled);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first) return;
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 
   let easterEgg = "";

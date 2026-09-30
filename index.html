@@ -17,9 +17,24 @@
   <meta name="twitter:title" content="Bhavesh Manhar // Red Team Operator" />
   <meta name="twitter:description" content="Offensive security, identity attack paths and operator-controlled AI security R&D." />
   <meta name="twitter:image" content="https://tonyb760.github.io/assets/bhavesh-manhar.webp" />
+  <meta name="twitter:image:alt" content="Portrait of Bhavesh Manhar" />
+  <meta property="og:image:width" content="1254" />
+  <meta property="og:image:height" content="1254" />
   <title>Bhavesh Manhar // Red Team Operator</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20261001-5" />
+  <link rel="stylesheet" href="./styles.css?v=20261001-6" />
+  <noscript><style>
+    .menu-button, .desktop-nav, .site-footer button { display: none; }
+    .site-header { position: relative; }
+    .mobile-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); position: static; grid-column: 1 / -1; padding: 12px 0; gap: 0 16px; }
+    .mobile-nav a { padding: 12px 0; }
+    .surface-tabs { display: none; }
+    .surface-panel[hidden] { display: block; }
+    .surface-panel + .surface-panel { margin-top: 40px; }
+    .method-stages { display: none; }
+    #method-detail { display: none; }
+    .method-static { display: block; }
+  </style></noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,7 +65,7 @@
   <div class="grid-field" aria-hidden="true"></div>
   <div class="scan-line" aria-hidden="true"></div>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <a class="brand" href="#top" aria-label="Bhavesh Manhar home">
       <span class="brand-mark">BM</span>
       <span class="brand-slash">//</span>
@@ -88,7 +103,7 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero section-shell">
       <div class="hero-copy" data-reveal>
         <div class="eyebrow">
@@ -163,7 +178,6 @@
         </aside>
       </div>
 
-      <div class="hero-index" aria-hidden="true">00</div>
     </section>
 
     <section class="marquee-band" aria-label="Focus areas">
@@ -705,6 +719,7 @@
         </div>
 
         <p class="method-scope-note" data-reveal>The lifecycle adapts to the agreed scope. Detection review uses available telemetry; remediation validation and retesting depend on authorised access and implemented changes.</p>
+        <noscript><ol class="method-static"><li>Scope: agree objectives, authorised actions and evidence handling.</li><li>Threat model: select relevant scenarios and coverage limits.</li><li>Observe: preserve environmental signals and context.</li><li>Path model: connect trust relationships and prioritise hypotheses.</li><li>Validate: test controlled steps and preserve positive and negative results.</li><li>Evidence: document provenance, impact and uncertainty.</li><li>Detection review: compare tested actions with available telemetry.</li><li>Remediation: recommend changes that address the underlying control failure.</li><li>Retest: validate implemented changes and record remaining risks.</li></ol></noscript>
         <div class="method-grid">
           <div class="method-stages" data-reveal>
             <div class="method-selection" aria-hidden="true"><span>ACTIVE PHASE</span><strong id="method-core-title">SCOPE</strong><small id="method-core-note">AGREE THE BOUNDARIES</small></div>
@@ -965,6 +980,6 @@
     </div>
   </div>
 
-  <script src="./script.js?v=20261001-1"></script>
+  <script src="./script.js?v=20261001-2"></script>
 </body>
 </html>
