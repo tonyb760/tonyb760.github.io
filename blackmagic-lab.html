@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b0d" />
+  <meta name="description" content="A sanitised BlackMagic DVWA lab example: saved assessment state, conflicting evidence, control retesting and reviewable findings." />
+  <link rel="canonical" href="https://tonyb760.github.io/blackmagic-lab.html" />
+  <meta property="og:title" content="BlackMagic Lab Record // Bhavesh Manhar" />
+  <meta property="og:description" content="How saved lab evidence informs an operator-led security assessment." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tonyb760.github.io/blackmagic-lab.html" />
+  <title>BlackMagic Lab Record // Bhavesh Manhar</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=20261001-1" />
+</head>
+<body class="lab-record-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="case-page-header section-shell">
+    <a class="brand" href="./index.html" aria-label="Bhavesh Manhar home"><span class="brand-mark">BM</span><span class="brand-slash">//</span><span class="brand-index">LAB</span></a>
+    <a class="text-link" href="./index.html#blackmagic">← Back to BlackMagic</a>
+  </header>
+  <main class="section-shell case-page-main" id="main">
+    <div class="case-page-intro">
+      <span class="section-kicker">BLACKMAGIC // SANITISED LAB RECORD</span>
+      <h1>When the evidence<br />changes the finding.</h1>
+      <p class="case-page-lead">A DVWA control-validation exercise showing saved assessment state, conflicting test results and the value of reviewing what an application actually did.</p>
+      <div class="record-tags"><span>DVWA LAB</span><span>WEB SECURITY</span><span>CONTROL RETESTING</span><span>EVIDENCE REVIEW</span></div>
+      <p class="case-disclosure">This is a retrospective summary of saved BlackMagic lab artifacts. The evidence examples are rewritten, with illustrative identifiers. Original infrastructure, credentials, payloads and screenshots are excluded.</p>
+    </div>
+
+    <section class="case-section" aria-labelledby="objective-title">
+      <span class="section-kicker">01 // OBJECTIVE &amp; SCOPE</span>
+      <h2 id="objective-title">Evaluate controls in context.</h2>
+      <div class="case-two-column">
+        <div><h3>Environment</h3><p>Damn Vulnerable Web Application (DVWA), an intentionally vulnerable training application, with an edge filtering layer in the saved test environment.</p><h3>Question</h3><p>Which tests were blocked, which reached the application, and which responses supported an actual security impact?</p></div>
+        <div><h3>BlackMagic’s contribution</h3><p>The saved workspace contains command history, assessment state, operator checkpoints, structured finding records, screenshots and generated HTML reports.</p><h3>What the record demonstrates</h3><p>Continuity between testing and reporting, review of conflicting evidence, and separation of request acceptance from demonstrated exploitation.</p></div>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="workflow-title">
+      <span class="section-kicker">02 // WORKFLOW RECONSTRUCTION</span>
+      <h2 id="workflow-title">Keep the decision connected to its evidence.</h2>
+      <p>The sequence below is an editorial reconstruction from the saved artifacts, rather than a verbatim execution trace.</p>
+      <ol class="case-workflow">
+        <li><span>01</span><h3>Preserve context</h3><p>Retain the assessment state and an operator checkpoint so review can resume with the existing observations.</p></li>
+        <li><span>02</span><h3>Compare behaviour</h3><p>Review baseline tests and later replays against both edge-control responses and application output.</p></li>
+        <li><span>03</span><h3>Reconcile evidence</h3><p>Inspect disagreements between automated verification, manual observations and later retest notes.</p></li>
+        <li><span>04</span><h3>Record the conclusion</h3><p>Carry findings, control observations and limitations into a report that supports operator review.</p></li>
+      </ol>
+    </section>
+
+    <section class="case-section" aria-labelledby="evidence-title">
+      <span class="section-kicker">03 // OBSERVATIONS &amp; LIMITS</span>
+      <h2 id="evidence-title">A response code is one signal.</h2>
+      <div class="case-observations">
+        <article><span class="case-status">CONFLICTING EVIDENCE</span><h3>Query-input testing</h3><p>Saved manual observations describe application record retrieval. An automated verifier separately marked a query-input test as a false positive because it detected no error, boolean difference or timing signal.</p><p class="case-conclusion"><strong>Conclusion:</strong> The disagreement needs evidence review. A verifier verdict alone cannot resolve it, and the saved observations do not establish that the tests were identical.</p></article>
+        <article><span class="case-status">IMPACT NOT DEMONSTRATED IN LATER RETEST</span><h3>Command-execution testing</h3><p>Some earlier replay notes recorded accepted requests. A later retest recorded no command-execution output and noted application-side input validation.</p><p class="case-conclusion"><strong>Conclusion:</strong> An accepted request does not demonstrate command execution. Findings must reflect the observed application behaviour and retest context.</p></article>
+        <article><span class="case-status">NO EXECUTION OBSERVED</span><h3>Cross-site scripting retests</h3><p>Saved retest notes describe edge blocks and non-executing DOM cases. The execution instrumentation recorded no triggered execution in the documented test set.</p><p class="case-conclusion"><strong>Conclusion:</strong> Report the tested cases and controls observed. These results do not prove that every possible XSS vector is prevented.</p></article>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="finding-title">
+      <span class="section-kicker">04 // REWRITTEN FINDING EXCERPT</span>
+      <h2 id="finding-title">Make uncertainty reviewable.</h2>
+      <article class="case-finding">
+        <div class="record-topline"><span>ILLUSTRATIVE RECORD // DEMO-01</span><span>REVIEW REQUIRED</span></div>
+        <h3>Conflicting query-input evidence</h3>
+        <dl>
+          <dt>Observation</dt><dd>A manual observation recorded data retrieval, while an automated check rejected its test signal.</dd>
+          <dt>Evidence references</dt><dd>LAB-QUERY-01: rewritten manual observation.<br />LAB-VERIFY-01: rewritten verifier result.<br />These labels are illustrative; they are not original artifact identifiers.</dd>
+          <dt>Impact</dt><dd>Potential access beyond the intended query boundary. Exact scope and reproducibility require a controlled replay.</dd>
+          <dt>Next validation</dt><dd>Match test conditions, compare baseline and test responses, and establish whether any data access exceeded the intended application behaviour.</dd>
+          <dt>Remediation direction</dt><dd>Use parameterised queries and application-side input constraints. Validate the change against the original behaviour once the evidence discrepancy is resolved.</dd>
+          <dt>Retest status</dt><dd>No remediation closure is claimed in this public summary.</dd>
+        </dl>
+      </article>
+      <a class="button button-ghost" href="./assets/blackmagic-lab-example.md" download><span>Download sanitised example</span><span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="case-section" aria-labelledby="takeaways-title">
+      <span class="section-kicker">05 // OPERATOR &amp; DEFENDER VALUE</span>
+      <h2 id="takeaways-title">Preserve enough context to make a better decision.</h2>
+      <div class="case-two-column">
+        <div><h3>For the operator</h3><ul><li>Keep automated verdicts alongside supporting observations.</li><li>Separate blocked tests, accepted requests and demonstrated impact.</li><li>Revisit earlier findings when application behaviour changes.</li><li>Document uncertainty and the next validation step.</li></ul></div>
+        <div><h3>For the defender</h3><ul><li>Review application controls alongside edge filtering.</li><li>Remediate the underlying input or trust-boundary failure.</li><li>Retest actual behaviour rather than relying on HTTP status alone.</li><li>Keep regression evidence tied to a defined set of test conditions.</li></ul></div>
+      </div>
+      <p class="case-disclosure">This saved run demonstrates checkpointing and evidence review. It does not establish end-to-end enforcement of human approval gates or a completed remediation programme.</p>
+    </section>
+    <div class="case-page-actions"><a class="button button-primary" href="./index.html#contact"><span>Discuss this work</span><span aria-hidden="true">↗</span></a><a class="text-link" href="./index.html#selected-operations">View selected operations ↗</a></div>
+  </main>
+  <footer class="case-page-footer section-shell"><span>BHAVESH MANHAR // 0xTONYB</span><a href="./index.html">Return to portfolio ↑</a></footer>
+</body>
+</html>
