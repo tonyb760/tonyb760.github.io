@@ -3043,3 +3043,48 @@ img {
   color: var(--text);
   font: 14px/1.6 var(--mono);
 }
+
+/* Capability evidence and curated lab research. */
+.operation-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+.operation-role span { color: var(--signal); font: 10px var(--mono); letter-spacing: .1em; }
+.operation-case { scroll-margin-top: 100px; }
+.capability-evidence { margin-bottom: 48px; }
+.capability-intro { max-width: 760px; font-size: 20px; }
+.capability-legend { color: var(--muted); font-size: 13px; }
+.capability-legend span { color: var(--text); font: 10px var(--mono); margin-right: 8px; }
+.capability-legend span:not(:first-child) { margin-left: 16px; }
+.capability-table-wrap { overflow-x: auto; border: 1px solid var(--line); }
+.capability-table { width: 100%; min-width: 680px; border-collapse: collapse; text-align: left; }
+.capability-table caption { padding: 16px 20px; color: var(--muted); text-align: left; font-size: 13px; }
+.capability-table th, .capability-table td { padding: 20px; vertical-align: top; border-top: 1px solid var(--line); }
+.capability-table thead th { font: 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.capability-table tbody th { width: 19%; font-size: 15px; }
+.capability-table tbody td { color: var(--muted); font-size: 14px; }
+.capability-table tbody td:nth-child(2) { width: 45%; }
+.capability-table a { color: var(--signal); text-decoration: underline; text-underline-offset: 4px; }
+.practice-level { font: 10px var(--mono); color: var(--status); }
+.practice-research { color: var(--ember); }
+.capability-proof { margin-top: 28px; }
+.lab-intro { max-width: 740px; margin-bottom: 32px; scroll-margin-top: 100px; }
+.lab-intro h3 { font-size: 28px; margin: 0 0 12px; }
+.lab-intro p { color: var(--muted); }
+.lab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.lab-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--line); background: var(--bg-soft); min-width: 0; }
+.lab-card h3 { margin: 28px 0 12px; font-size: 32px; letter-spacing: -.035em; }
+.lab-hook { color: var(--muted); margin: 0; }
+.lab-card .field-card-top { flex-wrap: wrap; gap: 8px; }
+.lab-card .field-tags { margin-bottom: 24px; }
+.lab-details { border-top: 1px solid var(--line); margin-top: auto; }
+.lab-details summary { cursor: pointer; padding: 18px 0; font: 11px var(--mono); color: var(--text); }
+.lab-details h4 { font: 10px var(--mono); text-transform: uppercase; color: var(--signal); margin: 12px 0; }
+.lab-details p { color: var(--muted); font-size: 14px; }
+.lab-card .text-link { align-self: flex-start; margin-top: 16px; }
+.research-links { display: flex; flex-wrap: wrap; gap: 16px 36px; }
+.capability-table-wrap:focus-visible, .lab-details summary:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+@media (max-width: 1100px) { .lab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) { .lab-grid { grid-template-columns: 1fr; } }
