@@ -3178,3 +3178,12 @@ img {
 .retest-progression p { font-size: 13px; margin-bottom: 0; }
 .supporting-evidence .text-link { margin-top: 24px; }
 @media (max-width: 760px) { .retest-progression { grid-template-columns: 1fr; } }
+
+/* Concise operation summaries, with full evidence inside native disclosures. */
+.operation-summary { display: grid; grid-template-columns: 1fr .65fr 1.15fr; gap: 24px; margin: 28px 0; }
+.operation-summary p { margin: 0; }
+.operation-summary .operation-role { display: block; }
+.operation-expanded { padding-top: 12px; }
+.operation-expanded > .operation-overview { margin-top: 16px; }
+.operation-expanded > .operation-techniques { margin-bottom: 24px; }
+@media (max-width: 760px) { .operation-summary { grid-template-columns: 1fr; gap: 20px; } }

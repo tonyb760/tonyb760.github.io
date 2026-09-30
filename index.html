@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://tonyb760.github.io/assets/bhavesh-manhar.webp" />
   <title>Bhavesh Manhar // Red Team Operator</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20261001-4" />
+  <link rel="stylesheet" href="./styles.css?v=20261001-5" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -195,12 +195,20 @@
         <div class="record-topline"><span>OPERATION 01 // HYBRID IDENTITY</span><span class="live-label"><i></i> ENTERPRISE ASSESSMENT</span></div>
         <h3>Hybrid Identity Attack-Path Assessment</h3>
         <p class="operation-environment">Regional financial-services enterprise with on-premises Active Directory and hybrid Microsoft identity services.</p>
-        <p class="operation-role"><span>MY ROLE</span> Independent assessment lead</p>
-        <div class="operation-overview"><div><h4>Objective</h4><p>Determine whether compromise of a standard user account could be chained into privileged access through identity misconfigurations, delegated permissions, certificate services, or service-account relationships.</p></div><div><h4>Approach</h4><p>BloodHound and targeted directory enumeration were used to construct the identity graph. High-risk relationships were manually reviewed to separate theoretical paths from realistically exploitable chains.</p></div><div><h4>Defender outcome</h4><p>The final output translated the attack graph into a remediation programme based on root cause, blast radius and remediation value. Defenders could focus on breaking multiple attack paths with a smaller number of control changes, rather than remediating hundreds of graph edges individually.</p></div></div>
-        <p class="operation-result">500+ high-risk identity paths triaged and prioritised</p>
-        <div class="operation-path"><h4>Attack path assessed</h4><ol class="attack-chain" aria-label="Assessment attack path"><li>Standard User</li><li>Delegated Group Control</li><li>Service Account</li><li>Certificate / Identity Misconfiguration</li><li>Privileged Account</li><li>High-Value Enterprise Asset</li></ol></div>
-        <details class="operation-details"><summary>View case study <span aria-hidden="true">+</span></summary><div class="operation-detail-body"><section><h4>Attack surface</h4><p>Active Directory · ADCS · Kerberos · Group Policy · Service Accounts · ACLs · Hybrid Identity</p></section><section><h4>Observation</h4><p>Multiple identity relationships individually appeared low risk but became significant when chained together. Several paths shared the same underlying root causes:</p><ul><li>Excessive delegated permissions</li><li>Long-lived service-account privileges</li><li>Nested group relationships</li><li>Weak ownership of privileged objects</li><li>Certificate-service configuration exposure</li></ul></section><section><h4>Hypothesis</h4><p>An attacker beginning with ordinary domain-user access could potentially move through existing trust relationships without requiring exploitation of a software vulnerability.</p></section><section><h4>Validation</h4><p>Where authorised, representative paths were safely validated to establish practical escalation routes. Candidate paths were manually reviewed and prioritised according to:</p><ul><li>Exploitability</li><li>Privilege gained</li><li>Number of prerequisite conditions</li><li>Blast radius</li><li>Accessibility from a realistic initial foothold</li></ul></section><section><h4>Evidence</h4><p>Evidence collected included:</p><ul><li>Identity relationship graphs</li><li>Object ACLs</li><li>Group membership relationships</li><li>Certificate configuration</li><li>Service-account privilege relationships</li><li>Affected asset inventory</li><li>Reproducible attack-path documentation</li></ul></section><section><h4>Result</h4><p>500+ high-risk identity paths triaged and prioritised. Findings were consolidated around the underlying control failures responsible for generating the paths, rather than reporting each path as a separate issue.</p></section><section><h4>Detection opportunities</h4><p>The assessment identified opportunities for defenders to monitor:</p><ul><li>Unusual privileged-group modifications</li><li>Certificate enrolment activity</li><li>Abnormal authentication patterns</li><li>Service-account use outside expected systems</li><li>Enumeration of privileged directory objects</li></ul></section></div></details>
-        <div class="record-tags operation-techniques" aria-label="Techniques and tools"><span>Active Directory</span><span>ADCS</span><span>Kerberos</span><span>BloodHound</span><span>ACL Analysis</span><span>Attack-Path Modelling</span><span>Identity Security</span></div>
+              <div class="operation-summary">
+          <div><h4>Objective</h4><p>Assess routes from standard-user access to privileged enterprise assets.</p></div>
+          <div><h4>My role</h4><p class="operation-role">Independent assessment lead</p></div>
+          <div><h4>Key result</h4><p>500+ high-risk identity paths triaged and prioritised by root cause and impact.</p></div>
+        </div>
+        <details class="operation-details operation-case-details">
+          <summary>View case study <span aria-hidden="true">+</span></summary>
+          <div class="operation-expanded"><div class="operation-overview"><div><h4>Objective</h4><p>Determine whether compromise of a standard user account could be chained into privileged access through identity misconfigurations, delegated permissions, certificate services, or service-account relationships.</p></div><div><h4>Approach</h4><p>BloodHound and targeted directory enumeration were used to construct the identity graph. High-risk relationships were manually reviewed to separate theoretical paths from realistically exploitable chains.</p></div><div><h4>Defender outcome</h4><p>The final output translated the attack graph into a remediation programme based on root cause, blast radius and remediation value. Defenders could focus on breaking multiple attack paths with a smaller number of control changes, rather than remediating hundreds of graph edges individually.</p></div></div>
+<p class="operation-result">500+ high-risk identity paths triaged and prioritised</p>
+<div class="operation-path"><h4>Attack path assessed</h4><ol class="attack-chain" aria-label="Assessment attack path"><li>Standard User</li><li>Delegated Group Control</li><li>Service Account</li><li>Certificate / Identity Misconfiguration</li><li>Privileged Account</li><li>High-Value Enterprise Asset</li></ol></div>
+
+<div class="operation-detail-body"><section><h4>Attack surface</h4><p>Active Directory · ADCS · Kerberos · Group Policy · Service Accounts · ACLs · Hybrid Identity</p></section><section><h4>Observation</h4><p>Multiple identity relationships individually appeared low risk but became significant when chained together. Several paths shared the same underlying root causes:</p><ul><li>Excessive delegated permissions</li><li>Long-lived service-account privileges</li><li>Nested group relationships</li><li>Weak ownership of privileged objects</li><li>Certificate-service configuration exposure</li></ul></section><section><h4>Hypothesis</h4><p>An attacker beginning with ordinary domain-user access could potentially move through existing trust relationships without requiring exploitation of a software vulnerability.</p></section><section><h4>Validation</h4><p>Where authorised, representative paths were safely validated to establish practical escalation routes. Candidate paths were manually reviewed and prioritised according to:</p><ul><li>Exploitability</li><li>Privilege gained</li><li>Number of prerequisite conditions</li><li>Blast radius</li><li>Accessibility from a realistic initial foothold</li></ul></section><section><h4>Evidence</h4><p>Evidence collected included:</p><ul><li>Identity relationship graphs</li><li>Object ACLs</li><li>Group membership relationships</li><li>Certificate configuration</li><li>Service-account privilege relationships</li><li>Affected asset inventory</li><li>Reproducible attack-path documentation</li></ul></section><section><h4>Result</h4><p>500+ high-risk identity paths triaged and prioritised. Findings were consolidated around the underlying control failures responsible for generating the paths, rather than reporting each path as a separate issue.</p></section><section><h4>Detection opportunities</h4><p>The assessment identified opportunities for defenders to monitor:</p><ul><li>Unusual privileged-group modifications</li><li>Certificate enrolment activity</li><li>Abnormal authentication patterns</li><li>Service-account use outside expected systems</li><li>Enumeration of privileged directory objects</li></ul></section></div>
+<div class="record-tags operation-techniques" aria-label="Techniques and tools"><span>Active Directory</span><span>ADCS</span><span>Kerberos</span><span>BloodHound</span><span>ACL Analysis</span><span>Attack-Path Modelling</span><span>Identity Security</span></div></div>
+        </details>
       </article>
 
       <article class="operation-case" id="operation-02" data-reveal>
@@ -210,8 +218,14 @@
         </div>
         <h3>Web &amp; API Attack-Chain Assessment</h3>
         <p class="operation-environment">Enterprise web application and supporting API services in a regulated financial-services environment.</p>
-        <p class="operation-role"><span>MY ROLE</span> Independent assessment lead</p>
-        <div class="operation-overview">
+              <div class="operation-summary">
+          <div><h4>Objective</h4><p>Test whether web and API weaknesses can combine into meaningful business impact.</p></div>
+          <div><h4>My role</h4><p class="operation-role">Independent assessment lead</p></div>
+          <div><h4>Key result</h4><p>Manually validated attack scenarios with reproducible evidence, remediation guidance and retest status.</p></div>
+        </div>
+        <details class="operation-details operation-case-details">
+          <summary>View case study <span aria-hidden="true">+</span></summary>
+          <div class="operation-expanded"><div class="operation-overview">
           <div>
             <h4>Objective</h4>
             <p>Identify whether weaknesses across authentication, authorisation, application logic and exposed backend functionality could be chained into meaningful business impact.</p>
@@ -226,7 +240,18 @@
           </div>
         </div>
 
-        <aside class="supporting-evidence" aria-labelledby="api-retest-title">
+<div class="operation-path">
+          <h4>Attack path assessed</h4>
+          <ol class="attack-chain" aria-label="Assessment attack path">
+            <li>External User</li>
+            <li>Application Reconnaissance</li>
+            <li>Authentication / Authorisation Weakness</li>
+            <li>Unauthorised API Function</li>
+            <li>Sensitive Business Operation</li>
+            <li>Privilege or Data Impact</li>
+          </ol>
+        </div>
+<aside class="supporting-evidence" aria-labelledby="api-retest-title">
           <span class="section-kicker">SUPPORTING EVIDENCE // ANONYMISED UAT API ASSESSMENT</span>
           <h4 id="api-retest-title">From repeated acceptance to duplicate rejection.</h4>
           <p>Saved assessment and retest records show a business-operation replay finding progressing from observed duplicate acceptance, through an inconclusive retest, to recorded closure after an explicit duplicate-rejection response.</p>
@@ -247,22 +272,7 @@
           </details>
           <a class="text-link" href="./assets/api-replay-retest-example.md" download>Download sanitised retest excerpt <span aria-hidden="true">↓</span></a>
         </aside>
-
-        <div class="operation-path">
-          <h4>Attack path assessed</h4>
-          <ol class="attack-chain" aria-label="Assessment attack path">
-            <li>External User</li>
-            <li>Application Reconnaissance</li>
-            <li>Authentication / Authorisation Weakness</li>
-            <li>Unauthorised API Function</li>
-            <li>Sensitive Business Operation</li>
-            <li>Privilege or Data Impact</li>
-          </ol>
-        </div>
-
-        <details class="operation-details">
-          <summary>View case study <span aria-hidden="true">+</span></summary>
-          <div class="operation-detail-body">
+<div class="operation-detail-body">
             <section>
               <h4>Attack surface</h4>
               <p>Web application · REST APIs · Authentication · Authorisation · Session management · Business logic · Backend services</p>
@@ -327,22 +337,31 @@
               </ul>
             </section>
           </div>
-        </details>
-        <div class="record-tags operation-techniques" aria-label="Techniques and tools">
+
+<div class="record-tags operation-techniques" aria-label="Techniques and tools">
           <span>Web Security</span><span>API Security</span><span>AuthN/AuthZ</span>
           <span>BOLA/IDOR</span><span>Business Logic</span><span>Burp Suite</span><span>Manual Validation</span>
-        </div>
+        </div></div>
+        </details>
       </article>
       <article class="operation-case" id="operation-03" data-reveal>
         <div class="record-topline"><span>OPERATION 03 // AI SECURITY R&amp;D</span><span class="live-label"><i></i> CONTROLLED LAB / R&amp;D</span></div>
         <h3>Agentic AI Trust-Boundary Assessment</h3>
         <p class="operation-environment">Controlled AI-agent lab containing an LLM, retrieval layer, memory, external tools and human-approval controls.</p>
-        <p class="operation-role"><span>MY ROLE</span> Independent assessment lead</p>
-        <div class="operation-overview"><div><h4>Objective</h4><p>Determine whether untrusted instructions or retrieved content could influence an AI agent into crossing intended authority boundaries or misusing connected tools.</p></div><div><h4>Approach</h4><p>The assessment treated the AI model as one component inside a larger security system. Testing concentrated on trust boundaries across user, model, retrieval, memory, tools and external systems.</p></div><div><h4>Defender outcome</h4><p>The exercise evaluated the maximum authority an agent could exercise if manipulation succeeded. The resulting design recommendations focused on reducing the blast radius available to a compromised or manipulated agent.</p></div></div>
+              <div class="operation-summary">
+          <div><h4>Objective</h4><p>Evaluate whether untrusted content can cross an AI agent’s authority boundaries.</p></div>
+          <div><h4>My role</h4><p class="operation-role">Independent assessment lead</p></div>
+          <div><h4>Key result</h4><p>Design recommendations to limit tool authority and reduce potential blast radius in a controlled lab.</p></div>
+        </div>
+        <details class="operation-details operation-case-details">
+          <summary>View case study <span aria-hidden="true">+</span></summary>
+          <div class="operation-expanded"><div class="operation-overview"><div><h4>Objective</h4><p>Determine whether untrusted instructions or retrieved content could influence an AI agent into crossing intended authority boundaries or misusing connected tools.</p></div><div><h4>Approach</h4><p>The assessment treated the AI model as one component inside a larger security system. Testing concentrated on trust boundaries across user, model, retrieval, memory, tools and external systems.</p></div><div><h4>Defender outcome</h4><p>The exercise evaluated the maximum authority an agent could exercise if manipulation succeeded. The resulting design recommendations focused on reducing the blast radius available to a compromised or manipulated agent.</p></div></div>
 
-        <div class="operation-path"><h4>Attack path assessed</h4><ol class="attack-chain" aria-label="Assessment attack path"><li>Untrusted Content</li><li>Indirect Prompt Injection</li><li>Agent Instruction Manipulation</li><li>Tool Selection</li><li>Authority Boundary Failure</li><li>Unauthorised Action / Data Exposure</li></ol></div>
-        <details class="operation-details"><summary>View case study <span aria-hidden="true">+</span></summary><div class="operation-detail-body"><section><h4>Attack surface</h4><p>LLM Agent · MCP / Tool Interfaces · RAG · Memory · Prompt Boundaries · Human Approval · External Content</p></section><section><h4>Observation</h4><p>The higher-impact scenario was whether attacker-controlled content could influence a model with tools, credentials, stored context, access to external data and permission to perform actions.</p></section><section><h4>Hypothesis</h4><p>If trusted and untrusted instructions were insufficiently separated, attacker-controlled content could influence tool use or cause the agent to operate beyond the user&#x27;s original intent.</p></section><section><h4>Validation</h4><p>Tests were executed in a controlled laboratory environment using non-production accounts and synthetic data. The evaluation harness tested:</p><ul><li>Direct prompt injection</li><li>Indirect prompt injection</li><li>Retrieval poisoning</li><li>Malicious tool output</li><li>Memory contamination</li><li>Tool misuse</li><li>Excessive agent authority</li><li>Sensitive-data exposure</li><li>Approval bypass</li><li>Cross-step instruction persistence</li></ul></section><section><h4>Evidence</h4><p>For every successful or partially successful test, the harness recorded the following to create an auditable chain of the security-sensitive decision:</p><ul><li>Attacker-controlled input</li><li>Retrieved context</li><li>Model decision</li><li>Requested tool call</li><li>Approval state</li><li>Tool result</li><li>Resulting security impact</li></ul></section><section><h4>Defensive controls evaluated</h4><p>Controls included:</p><ul><li>Least-privilege tool permissions</li><li>Allow-listed operations</li><li>Structured tool interfaces</li><li>Separation of trusted and untrusted content</li><li>Human approval for sensitive actions</li><li>Short-lived credentials</li><li>Tool-output validation</li><li>Logging and replay</li><li>Memory isolation</li></ul></section><section><h4>Defender outcome</h4><p>The exercise shifted the security model from preventing every malicious prompt to limiting the authority available when manipulation succeeds.</p><blockquote>If manipulation succeeds, what is the maximum authority the agent can exercise?</blockquote></section><section><h4>Research value</h4><p>Offensive-security testing beyond traditional infrastructure and applications, applying the same core methodology: model the trust boundary → form a hypothesis → validate the attack → preserve evidence → reduce attacker capability.</p></section></div></details>
-        <div class="record-tags operation-techniques" aria-label="Techniques and tools"><span>AI Security</span><span>Prompt Injection</span><span>MCP</span><span>RAG</span><span>Agent Security</span><span>Tool Abuse</span><span>Least Privilege</span><span>Human-in-the-Loop</span></div>
+<div class="operation-path"><h4>Attack path assessed</h4><ol class="attack-chain" aria-label="Assessment attack path"><li>Untrusted Content</li><li>Indirect Prompt Injection</li><li>Agent Instruction Manipulation</li><li>Tool Selection</li><li>Authority Boundary Failure</li><li>Unauthorised Action / Data Exposure</li></ol></div>
+
+<div class="operation-detail-body"><section><h4>Attack surface</h4><p>LLM Agent · MCP / Tool Interfaces · RAG · Memory · Prompt Boundaries · Human Approval · External Content</p></section><section><h4>Observation</h4><p>The higher-impact scenario was whether attacker-controlled content could influence a model with tools, credentials, stored context, access to external data and permission to perform actions.</p></section><section><h4>Hypothesis</h4><p>If trusted and untrusted instructions were insufficiently separated, attacker-controlled content could influence tool use or cause the agent to operate beyond the user&#x27;s original intent.</p></section><section><h4>Validation</h4><p>Tests were executed in a controlled laboratory environment using non-production accounts and synthetic data. The evaluation harness tested:</p><ul><li>Direct prompt injection</li><li>Indirect prompt injection</li><li>Retrieval poisoning</li><li>Malicious tool output</li><li>Memory contamination</li><li>Tool misuse</li><li>Excessive agent authority</li><li>Sensitive-data exposure</li><li>Approval bypass</li><li>Cross-step instruction persistence</li></ul></section><section><h4>Evidence</h4><p>For every successful or partially successful test, the harness recorded the following to create an auditable chain of the security-sensitive decision:</p><ul><li>Attacker-controlled input</li><li>Retrieved context</li><li>Model decision</li><li>Requested tool call</li><li>Approval state</li><li>Tool result</li><li>Resulting security impact</li></ul></section><section><h4>Defensive controls evaluated</h4><p>Controls included:</p><ul><li>Least-privilege tool permissions</li><li>Allow-listed operations</li><li>Structured tool interfaces</li><li>Separation of trusted and untrusted content</li><li>Human approval for sensitive actions</li><li>Short-lived credentials</li><li>Tool-output validation</li><li>Logging and replay</li><li>Memory isolation</li></ul></section><section><h4>Defender outcome</h4><p>The exercise shifted the security model from preventing every malicious prompt to limiting the authority available when manipulation succeeds.</p><blockquote>If manipulation succeeds, what is the maximum authority the agent can exercise?</blockquote></section><section><h4>Research value</h4><p>Offensive-security testing beyond traditional infrastructure and applications, applying the same core methodology: model the trust boundary → form a hypothesis → validate the attack → preserve evidence → reduce attacker capability.</p></section></div>
+<div class="record-tags operation-techniques" aria-label="Techniques and tools"><span>AI Security</span><span>Prompt Injection</span><span>MCP</span><span>RAG</span><span>Agent Security</span><span>Tool Abuse</span><span>Least Privilege</span><span>Human-in-the-Loop</span></div></div>
+        </details>
       </article>
 
     </section>
