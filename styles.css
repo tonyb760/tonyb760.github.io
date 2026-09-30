@@ -3146,3 +3146,11 @@ img {
   .case-finding dd + dt { margin-top: 12px; }
   .case-page-header { flex-wrap: wrap; }
 }
+
+/* Contextual outcomes and explicit credential status groups. */
+.impact-outcome strong { font-size: clamp(24px, 2.5vw, 38px); line-height: 1.1; overflow-wrap: anywhere; }
+.impact-outcome .text-link { align-self: flex-start; margin-top: 12px; font-size: 9px; }
+.credential-groups { min-width: 0; }
+.credential-group + .credential-group { margin-top: 32px; }
+.credential-group h3 { margin: 0 0 16px; color: var(--signal); font: 11px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+#credentials { scroll-margin-top: 100px; }
