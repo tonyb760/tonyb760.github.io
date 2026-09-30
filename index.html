@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://tonyb760.github.io/assets/bhavesh-manhar.webp" />
   <title>Bhavesh Manhar // Red Team Operator</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20261001-2" />
+  <link rel="stylesheet" href="./styles.css?v=20261001-3" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,10 +59,10 @@
 
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#selected-operations">Operations</a>
-      <a href="#operator">About</a>
-      <a href="#operations">Experience</a>
       <a href="#surface">Capabilities</a>
       <a href="#field-notes">Research</a>
+      <a href="#operations">Experience</a>
+      <a href="#operator">About</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -78,10 +78,12 @@
 
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="#selected-operations">Operations</a>
-      <a href="#operator">About</a>
-      <a href="#operations">Experience</a>
       <a href="#surface">Capabilities</a>
       <a href="#field-notes">Research</a>
+      <a href="#blackmagic">BlackMagic</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#operations">Experience &amp; Credentials</a>
+      <a href="#operator">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -323,66 +325,9 @@
 
     </section>
 
-    <section class="section-shell operator-section" id="operator">
-      <div class="section-heading" data-reveal>
-        <span class="section-number">02</span>
-        <div>
-          <span class="section-kicker">OPERATOR // PROFILE</span>
-          <h2>Built from both sides<br />of the trust boundary.</h2>
-        </div>
-      </div>
-
-      <div class="operator-grid">
-        <div class="operator-copy" data-reveal>
-          <p class="lead">
-            I work at the intersection of offensive security, identity attack paths
-            and AI-assisted security operations.
-          </p>
-          <p>
-            More than a decade across enterprise infrastructure and security shaped
-            how I approach offensive work: understand the system first, validate the
-            hypothesis, preserve the evidence and leave defenders with something useful.
-          </p>
-          <p>
-            My current focus spans adversary simulation, Active Directory and hybrid
-            identity, web and API security, mobile application testing, and
-            operator-controlled AI security systems.
-          </p>
-
-          <div class="operator-principle">
-            <span class="mono-muted">PRINCIPLE / 01</span>
-            <blockquote>Coverage before noise. Evidence before ego.</blockquote>
-          </div>
-        </div>
-
-        <div class="metric-grid" data-reveal>
-          <article class="metric-card">
-            <span class="metric-label">TIME IN TECH + SECURITY</span>
-            <strong>12<span>+</span></strong>
-            <p>years across enterprise, infrastructure and security operations.</p>
-          </article>
-          <article class="metric-card metric-card-accent">
-            <span class="metric-label">IDENTITY PATHS TRIAGED</span>
-            <strong>500<span>+</span></strong>
-            <p>high-risk identity paths triaged during an enterprise assessment and prioritised by root cause and impact.</p>
-          </article>
-          <article class="metric-card">
-            <span class="metric-label">REGIONAL OPERATIONS</span>
-            <strong>03</strong>
-            <p>country environments represented in current Red Team operations.</p>
-          </article>
-          <article class="metric-card">
-            <span class="metric-label">NAC ASSESSMENT SCOPE</span>
-            <strong>1.8<span>K+</span></strong>
-            <p>endpoints assessed during an enterprise NAC security evaluation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section-shell surface-section" id="surface">
       <div class="section-heading" data-reveal>
-        <span class="section-number">03</span>
+        <span class="section-number">02</span>
         <div>
           <span class="section-kicker">ATTACK SURFACE // CAPABILITY MAP</span>
           <h2>Trace the surface.<br />Follow the trust.</h2>
@@ -512,6 +457,93 @@
       </div>
     </section>
 
+    <section class="section-shell field-section" id="field-notes">
+      <div class="section-heading" data-reveal>
+        <span class="section-number">03</span>
+        <div>
+          <span class="section-kicker">FIELD NOTES // PUBLIC WORK</span>
+          <h2>The path is part<br />of the evidence.</h2>
+        </div>
+      </div>
+
+      <div class="lab-intro" id="lab-operations" data-reveal>
+        <h3>Lab Operations</h3>
+        <p>Selected Hack The Box walkthroughs and methodology journals. These are learning environments; enterprise assessments are presented in Selected Operations.</p>
+      </div>
+      <div class="lab-grid">
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
+          <h3>Fluffy</h3>
+          <p class="lab-hook">Identity misconfigurations become an escalation chain.</p>
+          <div class="field-tags"><span>AD</span><span>ADCS</span><span>NTLM</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Connect domain enumeration, service-account access and certificate-service weaknesses into a documented identity path.</p><h4>Defender takeaway</h4><p>Review certificate settings alongside service-account privileges; a small configuration change can affect several trust relationships.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Fluffy-HTB.md" target="_blank" rel="noopener noreferrer">Read Fluffy writeup <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
+          <h3>Support</h3>
+          <p class="lab-hook">Directory permissions turn into privileged access.</p>
+          <div class="field-tags"><span>AD</span><span>KERBEROS</span><span>RBCD</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Trace exposed LDAP credentials into directory enumeration, computer-object control and resource-based constrained delegation.</p><h4>Defender takeaway</h4><p>Protect directory secrets and audit who can modify computer objects and delegation settings.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Support-HTB.md" target="_blank" rel="noopener noreferrer">Read Support writeup <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
+          <h3>Down</h3>
+          <p class="lab-hook">A URL-checking feature exposes deeper trust.</p>
+          <div class="field-tags"><span>WEB</span><span>SSRF</span><span>LINUX</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Follow server-side request behaviour and command-option handling through file disclosure, credential exposure and local privilege escalation.</p><h4>Defender takeaway</h4><p>Constrain backend network access and subprocess arguments; protect stored secrets and restrict sudo permissions.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Down-HTB.md" target="_blank" rel="noopener noreferrer">Read Down writeup <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
+          <h3>TwoMillion</h3>
+          <p class="lab-hook">API behaviour connects to host-level impact.</p>
+          <div class="field-tags"><span>API</span><span>COMMAND INJECTION</span><span>LINUX</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Map an application API, investigate privileged functionality and document the chain from command injection to Linux escalation.</p><h4>Defender takeaway</h4><p>Enforce server-side authorisation, avoid shell interpretation of user input and maintain host patch coverage.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/TwoMillion-HTB.md" target="_blank" rel="noopener noreferrer">Read TwoMillion writeup <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
+          <h3>Editor</h3>
+          <p class="lab-hook">Application compromise crosses into the host.</p>
+          <div class="field-tags"><span>WEB RCE</span><span>CREDENTIAL REUSE</span><span>PRIV ESC</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Document the relationship between application RCE, configuration secrets, reused credentials and a privileged helper.</p><h4>Defender takeaway</h4><p>Patch exposed applications, isolate service credentials and review privileged executable search paths.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Editor-HTB.md" target="_blank" rel="noopener noreferrer">Read Editor writeup <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="lab-card" data-reveal>
+          <div class="field-card-top"><span>SPOILER-SAFE / FIELD JOURNAL</span><span>HTB LAB</span></div>
+          <h3>Nimbus</h3>
+          <p class="lab-hook">Follow trust across asynchronous systems.</p>
+          <div class="field-tags"><span>CLOUD</span><span>CONTAINERS</span><span>TRUST BOUNDARIES</span></div>
+          <details class="lab-details">
+            <summary>What this demonstrates</summary>
+            <div><h4>Skill demonstrated</h4><p>Use a spoiler-safe journal to model web workflows, temporary authority, background processing and container boundaries.</p><h4>Defender takeaway</h4><p>Review the permissions carried between components, including workers, queues and container runtimes.</p></div>
+          </details>
+          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Nimbus-HTB-No-Spoiler.md" target="_blank" rel="noopener noreferrer">Read Nimbus writeup <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <div class="research-links" data-reveal>
+        <a class="text-link" href="https://github.com/tonyb760/HTB-Machines" target="_blank" rel="noopener noreferrer">Browse all lab documentation <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="https://github.com/tonyb760/WebVerse-Pro-" target="_blank" rel="noopener noreferrer">WebVerse Pro · Public build workspace <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section class="blackmagic-section" id="blackmagic">
       <div class="section-shell">
         <div class="section-heading invert-heading" data-reveal>
@@ -621,11 +653,69 @@
       </div>
     </section>
 
+    <section class="method-section" id="methodology">
+      <div class="section-shell">
+        <div class="section-heading invert-heading" data-reveal>
+          <span class="section-number">05</span>
+          <div>
+            <span class="section-kicker">METHODOLOGY // ASSESSMENT LIFECYCLE</span>
+            <h2>Scope the work.<br />Close the loop.</h2>
+          </div>
+        </div>
+
+        <p class="method-scope-note" data-reveal>The lifecycle adapts to the agreed scope. Detection review uses available telemetry; remediation validation and retesting depend on authorised access and implemented changes.</p>
+        <div class="method-grid">
+          <div class="method-stages" data-reveal>
+            <div class="method-selection" aria-hidden="true"><span>ACTIVE PHASE</span><strong id="method-core-title">SCOPE</strong><small id="method-core-note">AGREE THE BOUNDARIES</small></div>
+            <ol class="method-stage-list" aria-label="Assessment lifecycle; select a stage to inspect">
+              <li><button class="method-node is-active" type="button" data-method-step="scope" aria-pressed="true" aria-controls="method-detail"><b>01</b>SCOPE</button></li>
+              <li><button class="method-node" type="button" data-method-step="threat" aria-pressed="false" aria-controls="method-detail"><b>02</b>THREAT MODEL</button></li>
+              <li><button class="method-node" type="button" data-method-step="observe" aria-pressed="false" aria-controls="method-detail"><b>03</b>OBSERVE</button></li>
+              <li><button class="method-node" type="button" data-method-step="model" aria-pressed="false" aria-controls="method-detail"><b>04</b>PATH MODEL</button></li>
+              <li><button class="method-node" type="button" data-method-step="validate" aria-pressed="false" aria-controls="method-detail"><b>05</b>VALIDATE</button></li>
+              <li><button class="method-node" type="button" data-method-step="document" aria-pressed="false" aria-controls="method-detail"><b>06</b>EVIDENCE</button></li>
+              <li><button class="method-node" type="button" data-method-step="detect" aria-pressed="false" aria-controls="method-detail"><b>07</b>DETECTION REVIEW</button></li>
+              <li><button class="method-node" type="button" data-method-step="remediate" aria-pressed="false" aria-controls="method-detail"><b>08</b>REMEDIATION</button></li>
+              <li><button class="method-node" type="button" data-method-step="retest" aria-pressed="false" aria-controls="method-detail"><b>09</b>RETEST</button></li>
+            </ol>
+          </div>
+
+          <div class="method-copy" id="method-detail" data-reveal aria-live="polite">
+            <div class="method-detail-header">
+              <span id="method-index">DECISION / 01</span>
+              <small>SELECT A PHASE TO INSPECT</small>
+            </div>
+            <p class="method-prompt" id="method-prompt">What are we authorised to test?</p>
+            <div class="method-readout-grid">
+              <article>
+                <span>INPUT</span>
+                <strong id="method-input-title">OBJECTIVES &amp; CONSTRAINTS</strong>
+                <p id="method-input-copy">Business objectives, in-scope assets, access conditions and operational constraints.</p>
+              </article>
+              <article>
+                <span>OPERATOR DECISION</span>
+                <strong id="method-decision-title">AGREE THE RULES OF ENGAGEMENT</strong>
+                <p id="method-decision-copy">Define permitted actions, escalation contacts, stop conditions and evidence-handling requirements.</p>
+              </article>
+              <article>
+                <span>EVIDENCE PRODUCED</span>
+                <strong id="method-output-title">AGREED ASSESSMENT SCOPE</strong>
+                <p id="method-output-copy">A clear scope and test plan that connect authorised activity to the engagement objectives.</p>
+              </article>
+            </div>
+            <div class="method-trace" aria-label="Methodology progression">
+              <span>SCOPE</span><i>→</i><span>EVIDENCE</span><i>→</i><span>ACTION</span><i>→</i><span>RETEST</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-shell operations-section" id="operations">
       <div class="section-heading" data-reveal>
-        <span class="section-number">05</span>
+        <span class="section-number">06</span>
         <div>
-          <span class="section-kicker">OPERATION RECORD // SELECTED IMPACT</span>
+          <span class="section-kicker">EXPERIENCE // DELIVERY &amp; CREDENTIALS</span>
           <h2>Offensive work should<br />change the defensive picture.</h2>
         </div>
       </div>
@@ -688,186 +778,7 @@
           <p>Adversary simulation, identity attack paths and offensive security R&D.</p>
         </article>
       </div>
-    </section>
-
-    <section class="section-shell field-section" id="field-notes">
-      <div class="section-heading" data-reveal>
-        <span class="section-number">06</span>
-        <div>
-          <span class="section-kicker">FIELD NOTES // PUBLIC WORK</span>
-          <h2>The path is part<br />of the evidence.</h2>
-        </div>
-      </div>
-
-      <div class="lab-intro" id="lab-operations" data-reveal>
-        <h3>Lab Operations</h3>
-        <p>Selected Hack The Box walkthroughs and methodology journals. These are learning environments; enterprise assessments are presented in Selected Operations.</p>
-      </div>
-      <div class="lab-grid">
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
-          <h3>Fluffy</h3>
-          <p class="lab-hook">Identity misconfigurations become an escalation chain.</p>
-          <div class="field-tags"><span>AD</span><span>ADCS</span><span>NTLM</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Connect domain enumeration, service-account access and certificate-service weaknesses into a documented identity path.</p><h4>Defender takeaway</h4><p>Review certificate settings alongside service-account privileges; a small configuration change can affect several trust relationships.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Fluffy-HTB.md" target="_blank" rel="noopener noreferrer">Read Fluffy writeup <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
-          <h3>Support</h3>
-          <p class="lab-hook">Directory permissions turn into privileged access.</p>
-          <div class="field-tags"><span>AD</span><span>KERBEROS</span><span>RBCD</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Trace exposed LDAP credentials into directory enumeration, computer-object control and resource-based constrained delegation.</p><h4>Defender takeaway</h4><p>Protect directory secrets and audit who can modify computer objects and delegation settings.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Support-HTB.md" target="_blank" rel="noopener noreferrer">Read Support writeup <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
-          <h3>Down</h3>
-          <p class="lab-hook">A URL-checking feature exposes deeper trust.</p>
-          <div class="field-tags"><span>WEB</span><span>SSRF</span><span>LINUX</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Follow server-side request behaviour and command-option handling through file disclosure, credential exposure and local privilege escalation.</p><h4>Defender takeaway</h4><p>Constrain backend network access and subprocess arguments; protect stored secrets and restrict sudo permissions.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Down-HTB.md" target="_blank" rel="noopener noreferrer">Read Down writeup <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
-          <h3>TwoMillion</h3>
-          <p class="lab-hook">API behaviour connects to host-level impact.</p>
-          <div class="field-tags"><span>API</span><span>COMMAND INJECTION</span><span>LINUX</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Map an application API, investigate privileged functionality and document the chain from command injection to Linux escalation.</p><h4>Defender takeaway</h4><p>Enforce server-side authorisation, avoid shell interpretation of user input and maintain host patch coverage.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/TwoMillion-HTB.md" target="_blank" rel="noopener noreferrer">Read TwoMillion writeup <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>RETIRED / FULL WALKTHROUGH</span><span>HTB LAB</span></div>
-          <h3>Editor</h3>
-          <p class="lab-hook">Application compromise crosses into the host.</p>
-          <div class="field-tags"><span>WEB RCE</span><span>CREDENTIAL REUSE</span><span>PRIV ESC</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Document the relationship between application RCE, configuration secrets, reused credentials and a privileged helper.</p><h4>Defender takeaway</h4><p>Patch exposed applications, isolate service credentials and review privileged executable search paths.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Editor-HTB.md" target="_blank" rel="noopener noreferrer">Read Editor writeup <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="lab-card" data-reveal>
-          <div class="field-card-top"><span>SPOILER-SAFE / FIELD JOURNAL</span><span>HTB LAB</span></div>
-          <h3>Nimbus</h3>
-          <p class="lab-hook">Follow trust across asynchronous systems.</p>
-          <div class="field-tags"><span>CLOUD</span><span>CONTAINERS</span><span>TRUST BOUNDARIES</span></div>
-          <details class="lab-details">
-            <summary>What this demonstrates</summary>
-            <div><h4>Skill demonstrated</h4><p>Use a spoiler-safe journal to model web workflows, temporary authority, background processing and container boundaries.</p><h4>Defender takeaway</h4><p>Review the permissions carried between components, including workers, queues and container runtimes.</p></div>
-          </details>
-          <a class="text-link" href="https://github.com/tonyb760/HTB-Machines/blob/main/Nimbus-HTB-No-Spoiler.md" target="_blank" rel="noopener noreferrer">Read Nimbus writeup <span aria-hidden="true">↗</span></a>
-        </article>
-      </div>
-      <div class="research-links" data-reveal>
-        <a class="text-link" href="https://github.com/tonyb760/HTB-Machines" target="_blank" rel="noopener noreferrer">Browse all lab documentation <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="https://github.com/tonyb760/WebVerse-Pro-" target="_blank" rel="noopener noreferrer">WebVerse Pro · Public build workspace <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="method-section" id="methodology">
-      <div class="section-shell">
-        <div class="section-heading invert-heading" data-reveal>
-          <span class="section-number">07</span>
-          <div>
-            <span class="section-kicker">METHODOLOGY // DECISION LOOP</span>
-            <h2>Curiosity becomes useful<br />when the loop is repeatable.</h2>
-          </div>
-        </div>
-
-        <div class="method-grid">
-          <div class="method-loop" data-reveal aria-label="Interactive observe, model, validate, document and improve methodology loop">
-            <svg viewBox="0 0 600 600" role="img" aria-hidden="true">
-              <circle cx="300" cy="300" r="224" class="loop-track"/>
-              <circle cx="300" cy="300" r="224" class="loop-progress"/>
-            </svg>
-            <div class="method-core" aria-hidden="true">
-              <span>ACTIVE PHASE</span>
-              <strong id="method-core-title">OBSERVE</strong>
-              <small id="method-core-note">SIGNAL BEFORE HYPOTHESIS</small>
-            </div>
-            <button class="method-node method-n1 is-active" type="button" data-method-step="observe" aria-pressed="true" aria-controls="method-detail"><b>01</b>OBSERVE</button>
-            <button class="method-node method-n2" type="button" data-method-step="model" aria-pressed="false" aria-controls="method-detail"><b>02</b>MODEL</button>
-            <button class="method-node method-n3" type="button" data-method-step="validate" aria-pressed="false" aria-controls="method-detail"><b>03</b>VALIDATE</button>
-            <button class="method-node method-n4" type="button" data-method-step="document" aria-pressed="false" aria-controls="method-detail"><b>04</b>DOCUMENT</button>
-            <button class="method-node method-n5" type="button" data-method-step="improve" aria-pressed="false" aria-controls="method-detail"><b>05</b>IMPROVE</button>
-          </div>
-
-          <div class="method-copy" id="method-detail" data-reveal aria-live="polite">
-            <div class="method-detail-header">
-              <span id="method-index">DECISION / 01</span>
-              <small>SELECT A PHASE TO INSPECT</small>
-            </div>
-            <p class="method-prompt" id="method-prompt">What did the environment expose?</p>
-            <div class="method-readout-grid">
-              <article>
-                <span>INPUT</span>
-                <strong id="method-input-title">RAW SIGNALS</strong>
-                <p id="method-input-copy">Responses, routes, identities, service behaviour and environmental context.</p>
-              </article>
-              <article>
-                <span>OPERATOR DECISION</span>
-                <strong id="method-decision-title">SEPARATE SIGNAL FROM NOISE</strong>
-                <p id="method-decision-copy">Determine what is real, relevant and worth carrying into the working model.</p>
-              </article>
-              <article>
-                <span>EVIDENCE PRODUCED</span>
-                <strong id="method-output-title">VERIFIED OBSERVATIONS</strong>
-                <p id="method-output-copy">Timestamped observations with scope, source and enough context to reproduce them.</p>
-              </article>
-            </div>
-            <div class="method-trace" aria-label="Methodology progression">
-              <span>SIGNAL</span><i>→</i><span>HYPOTHESIS</span><i>→</i><span>PROOF</span><i>→</i><span>DECISION</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-shell arsenal-section" id="arsenal">
-      <div class="section-heading" data-reveal>
-        <span class="section-number">08</span>
-        <div>
-          <span class="section-kicker">ARSENAL // SYSTEMS I WORK WITH</span>
-          <h2>Tools are context.<br />The method is the skill.</h2>
-        </div>
-      </div>
-
-      <div class="arsenal-grid" data-reveal>
-        <article>
-          <span class="arsenal-index">A / 01</span>
-          <h3>IDENTITY</h3>
-          <p>BloodHound</p><p>AzureHound</p><p>Stormspotter</p><p>PingCastle</p><p>Purple Knight</p>
-        </article>
-        <article>
-          <span class="arsenal-index">A / 02</span>
-          <h3>APPLICATION</h3>
-          <p>Burp Suite</p><p>Postman / Newman</p><p>Playwright</p><p>Mobile static + runtime</p>
-        </article>
-        <article>
-          <span class="arsenal-index">A / 03</span>
-          <h3>OPERATIONS</h3>
-          <p>Kali Linux</p><p>Metasploit</p><p>Nessus</p><p>Python</p><p>PowerShell</p>
-        </article>
-        <article>
-          <span class="arsenal-index">A / 04</span>
-          <h3>AI SYSTEMS</h3>
-          <p>MCP</p><p>RAG</p><p>Agent orchestration</p><p>Knowledge systems</p><p>Security evaluation</p>
-        </article>
-      </div>
-
+      <div id="arsenal" class="experience-credentials">
       <div class="credentials" id="credentials" data-reveal>
         <div class="credentials-heading">
           <span>CREDENTIALS + TRAINING / SELECTED</span>
@@ -896,11 +807,69 @@
         <div><span>MSC</span><strong>CYBER SECURITY</strong><small>UNIVERSITY OF LIVERPOOL</small></div>
         <div><span>BSC (HONS)</span><strong>COMPUTING</strong><small>UNIVERSITY OF GREENWICH</small></div>
       </div>
+      </div>
+    </section>
+
+    <section class="section-shell operator-section" id="operator">
+      <div class="section-heading" data-reveal>
+        <span class="section-number">07</span>
+        <div>
+          <span class="section-kicker">OPERATOR // PROFILE</span>
+          <h2>Built from both sides<br />of the trust boundary.</h2>
+        </div>
+      </div>
+
+      <div class="operator-grid">
+        <div class="operator-copy" data-reveal>
+          <p class="lead">
+            I work at the intersection of offensive security, identity attack paths
+            and AI-assisted security operations.
+          </p>
+          <p>
+            More than a decade across enterprise infrastructure and security shaped
+            how I approach offensive work: understand the system first, validate the
+            hypothesis, preserve the evidence and leave defenders with something useful.
+          </p>
+          <p>
+            My current focus spans adversary simulation, Active Directory and hybrid
+            identity, web and API security, mobile application testing, and
+            operator-controlled AI security systems.
+          </p>
+
+          <div class="operator-principle">
+            <span class="mono-muted">PRINCIPLE / 01</span>
+            <blockquote>Coverage before noise. Evidence before ego.</blockquote>
+          </div>
+        </div>
+
+        <div class="metric-grid" data-reveal>
+          <article class="metric-card">
+            <span class="metric-label">TIME IN TECH + SECURITY</span>
+            <strong>12<span>+</span></strong>
+            <p>years across enterprise, infrastructure and security operations.</p>
+          </article>
+          <article class="metric-card metric-card-accent">
+            <span class="metric-label">IDENTITY PATHS TRIAGED</span>
+            <strong>500<span>+</span></strong>
+            <p>high-risk identity paths triaged during an enterprise assessment and prioritised by root cause and impact.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">REGIONAL OPERATIONS</span>
+            <strong>03</strong>
+            <p>country environments represented in current Red Team operations.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">NAC ASSESSMENT SCOPE</span>
+            <strong>1.8<span>K+</span></strong>
+            <p>endpoints assessed during an enterprise NAC security evaluation.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section class="contact-section" id="contact">
       <div class="section-shell contact-shell" data-reveal>
-        <span class="contact-kicker">09 / CONTACT // SECURE CHANNELS</span>
+        <span class="contact-kicker">08 / CONTACT // SECURE CHANNELS</span>
         <h2>LET'S TALK<br /><span>SECURITY.</span></h2>
         <p>
           Red Team, offensive security, identity attack paths or AI security R&D.
@@ -955,6 +924,6 @@
     </div>
   </div>
 
-  <script src="./script.js?v=20260714-2"></script>
+  <script src="./script.js?v=20261001-1"></script>
 </body>
 </html>

@@ -126,67 +126,115 @@
   });
 
   const methodSteps = {
-    observe: {
-      index: "DECISION / 01",
-      coreTitle: "OBSERVE",
-      coreNote: "SIGNAL BEFORE HYPOTHESIS",
-      prompt: "What did the environment expose?",
-      inputTitle: "RAW SIGNALS",
-      inputCopy: "Responses, routes, identities, service behaviour and environmental context.",
-      decisionTitle: "SEPARATE SIGNAL FROM NOISE",
-      decisionCopy: "Determine what is real, relevant and worth carrying into the working model.",
-      outputTitle: "VERIFIED OBSERVATIONS",
-      outputCopy: "Timestamped observations with scope, source and enough context to reproduce them."
+    "scope": {
+        "coreTitle": "SCOPE",
+        "coreNote": "AGREE THE BOUNDARIES",
+        "prompt": "What are we authorised to test?",
+        "inputTitle": "OBJECTIVES & CONSTRAINTS",
+        "inputCopy": "Business objectives, in-scope assets, access conditions and operational constraints.",
+        "decisionTitle": "AGREE THE RULES OF ENGAGEMENT",
+        "decisionCopy": "Define permitted actions, escalation contacts, stop conditions and evidence-handling requirements.",
+        "outputTitle": "AGREED ASSESSMENT SCOPE",
+        "outputCopy": "A clear scope and test plan that connect authorised activity to the engagement objectives.",
+        "index": "DECISION / 01"
     },
-    model: {
-      index: "DECISION / 02",
-      coreTitle: "MODEL",
-      coreNote: "CONTEXT CREATES MEANING",
-      prompt: "Why did that evidence matter?",
-      inputTitle: "VERIFIED CONTEXT",
-      inputCopy: "Confirmed observations, dependencies, identities and known environmental constraints.",
-      decisionTitle: "MAP TRUST AND DEPENDENCIES",
-      decisionCopy: "Connect the evidence to boundaries, assumptions and plausible paths through the system.",
-      outputTitle: "RANKED HYPOTHESES",
-      outputCopy: "A system model with candidate paths ordered by relevance, impact and confidence."
+    "threat": {
+        "coreTitle": "THREAT MODEL",
+        "coreNote": "OBJECTIVES GUIDE THE TEST",
+        "prompt": "Which threats matter to this environment?",
+        "inputTitle": "ENVIRONMENT & OBJECTIVES",
+        "inputCopy": "Critical assets, identity dependencies, business workflows and relevant threat scenarios.",
+        "decisionTitle": "SELECT RELEVANT SCENARIOS",
+        "decisionCopy": "Choose plausible starting conditions and attacker objectives that fit the authorised scope.",
+        "outputTitle": "THREAT-INFORMED TEST PLAN",
+        "outputCopy": "Prioritised scenarios with explicit assumptions, target outcomes and coverage limits.",
+        "index": "DECISION / 02"
     },
-    validate: {
-      index: "DECISION / 03",
-      coreTitle: "VALIDATE",
-      coreNote: "PROOF OVER ASSUMPTION",
-      prompt: "Which hypothesis survived validation?",
-      inputTitle: "RANKED HYPOTHESES",
-      inputCopy: "Candidate paths with their assumptions, expected signals and confidence levels.",
-      decisionTitle: "TEST THE SMALLEST SAFE STEP",
-      decisionCopy: "Choose a controlled action that can confirm or refute the path without unnecessary exposure.",
-      outputTitle: "REPRODUCIBLE PROOF",
-      outputCopy: "Evidence tied directly to the hypothesis, including both positive and negative results."
+    "observe": {
+        "index": "DECISION / 03",
+        "coreTitle": "OBSERVE",
+        "coreNote": "SIGNAL BEFORE HYPOTHESIS",
+        "prompt": "What did the environment expose?",
+        "inputTitle": "RAW SIGNALS",
+        "inputCopy": "Responses, routes, identities, service behaviour and environmental context.",
+        "decisionTitle": "SEPARATE SIGNAL FROM NOISE",
+        "decisionCopy": "Determine what is real, relevant and worth carrying into the working model.",
+        "outputTitle": "VERIFIED OBSERVATIONS",
+        "outputCopy": "Timestamped observations with scope, source and enough context to reproduce them."
     },
-    document: {
-      index: "DECISION / 04",
-      coreTitle: "DOCUMENT",
-      coreNote: "PRESERVE THE CHAIN",
-      prompt: "What trust boundary failed?",
-      inputTitle: "VALIDATED EVIDENCE",
-      inputCopy: "Commands, responses, screenshots, system context and the limits of what was tested.",
-      decisionTitle: "PRESERVE PROVENANCE AND IMPACT",
-      decisionCopy: "Explain how each step connects, what it proves and where uncertainty remains.",
-      outputTitle: "TRACEABLE FINDING",
-      outputCopy: "A defensible record another operator or defender can understand and reproduce."
+    "model": {
+        "index": "DECISION / 04",
+        "coreTitle": "PATH MODEL",
+        "coreNote": "CONTEXT CREATES MEANING",
+        "prompt": "Why did that evidence matter?",
+        "inputTitle": "VERIFIED CONTEXT",
+        "inputCopy": "Confirmed observations, dependencies, identities and known environmental constraints.",
+        "decisionTitle": "MAP TRUST AND DEPENDENCIES",
+        "decisionCopy": "Connect the evidence to boundaries, assumptions and plausible paths through the system.",
+        "outputTitle": "RANKED HYPOTHESES",
+        "outputCopy": "A system model with candidate paths ordered by relevance, impact and confidence."
     },
-    improve: {
-      index: "DECISION / 05",
-      coreTitle: "IMPROVE",
-      coreNote: "FEED THE NEXT LOOP",
-      prompt: "How could a defender detect or prevent the chain?",
-      inputTitle: "VALIDATED ATTACK PATH",
-      inputCopy: "The confirmed chain, affected controls, observable signals and operational context.",
-      decisionTitle: "TRANSLATE OFFENSE INTO DEFENSE",
-      decisionCopy: "Prioritize changes that break the path, improve visibility and reduce future uncertainty.",
-      outputTitle: "DEFENSIVE ACTION",
-      outputCopy: "Focused remediation, detection guidance and a stronger model for the next cycle."
+    "validate": {
+        "index": "DECISION / 05",
+        "coreTitle": "VALIDATE",
+        "coreNote": "PROOF OVER ASSUMPTION",
+        "prompt": "Which hypothesis survived validation?",
+        "inputTitle": "RANKED HYPOTHESES",
+        "inputCopy": "Candidate paths with their assumptions, expected signals and confidence levels.",
+        "decisionTitle": "TEST THE SMALLEST SAFE STEP",
+        "decisionCopy": "Choose a controlled action that can confirm or refute the path without unnecessary exposure.",
+        "outputTitle": "REPRODUCIBLE PROOF",
+        "outputCopy": "Evidence tied directly to the hypothesis, including both positive and negative results."
+    },
+    "document": {
+        "index": "DECISION / 06",
+        "coreTitle": "EVIDENCE",
+        "coreNote": "PRESERVE THE CHAIN",
+        "prompt": "What trust boundary failed?",
+        "inputTitle": "VALIDATED EVIDENCE",
+        "inputCopy": "Commands, responses, screenshots, system context and the limits of what was tested.",
+        "decisionTitle": "PRESERVE PROVENANCE AND IMPACT",
+        "decisionCopy": "Explain how each step connects, what it proves and where uncertainty remains.",
+        "outputTitle": "TRACEABLE FINDING",
+        "outputCopy": "A defensible record another operator or defender can understand and reproduce."
+    },
+    "detect": {
+        "coreTitle": "DETECTION REVIEW",
+        "coreNote": "COMPARE ACTIONS TO VISIBILITY",
+        "prompt": "What could defenders see?",
+        "inputTitle": "TEST TIMELINE & TELEMETRY",
+        "inputCopy": "Validated test activity and the logs, alerts or monitoring data available within scope.",
+        "decisionTitle": "CHECK VISIBILITY WITH DEFENDERS",
+        "decisionCopy": "Compare expected signals to available evidence; distinguish observed gaps from untested detection opportunities.",
+        "outputTitle": "DETECTION OBSERVATIONS",
+        "outputCopy": "Documented visibility, coverage limits and recommendations tied to the tested activity.",
+        "index": "DECISION / 07"
+    },
+    "remediate": {
+        "coreTitle": "REMEDIATION",
+        "coreNote": "BREAK THE ROOT CAUSE",
+        "prompt": "Which control change breaks the chain?",
+        "inputTitle": "FINDINGS & CONTROL FAILURES",
+        "inputCopy": "Validated attack paths, affected assets, business impact and underlying configuration or design weaknesses.",
+        "decisionTitle": "PRIORITISE EFFECTIVE CHANGES",
+        "decisionCopy": "Recommend changes by root cause, blast radius and implementation value, in consultation with control owners.",
+        "outputTitle": "ACTIONABLE REMEDIATION PLAN",
+        "outputCopy": "Specific recommendations and validation criteria connected to the original evidence.",
+        "index": "DECISION / 08"
+    },
+    "retest": {
+        "coreTitle": "RETEST",
+        "coreNote": "VALIDATE THE CHANGE",
+        "prompt": "Does the original path still work?",
+        "inputTitle": "IMPLEMENTED CHANGES & BASELINE",
+        "inputCopy": "Remediation changes, the original reproduction conditions and authorised retest access.",
+        "decisionTitle": "REPLAY & REVIEW RESIDUAL RISK",
+        "decisionCopy": "Repeat relevant checks, compare application behaviour and record blocked, remaining or untested paths.",
+        "outputTitle": "RETEST STATUS & RESIDUAL RISK",
+        "outputCopy": "Evidence-based closure where demonstrated; otherwise an explicit remaining issue or validation limitation.",
+        "index": "DECISION / 09"
     }
-  };
+};
 
   const methodButtons = [...document.querySelectorAll("[data-method-step]")];
   const methodFields = {
@@ -311,12 +359,13 @@
       "AI SECURITY    MCP / RAG / agents / evaluation"
     ].join("\n"),
     methodology: [
-      "DECISION LOOP",
+      "ASSESSMENT LIFECYCLE",
       "",
-      "OBSERVE -> MODEL THE SYSTEM -> VALIDATE A HYPOTHESIS",
-      "   ^                                      |",
-      "   |                                      v",
-      "IMPROVE THE NEXT DECISION <- DOCUMENT EVIDENCE"
+      "SCOPE -> THREAT MODEL -> OBSERVE -> PATH MODEL",
+      "VALIDATE -> EVIDENCE -> DETECTION REVIEW",
+      "REMEDIATION -> RETEST",
+      "",
+      "Coverage depends on agreed scope and available evidence."
     ].join("\n"),
     blackmagic: [
       "PROJECT        BLACKMAGIC",
