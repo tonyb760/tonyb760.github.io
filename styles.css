@@ -3165,3 +3165,16 @@ img {
 .method-stages .method-node { position: static; width: 100%; min-height: 58px; font-size: 11px; white-space: normal; text-align: left; line-height: 1.5; }
 .method-stage-list li:last-child { grid-column: 1 / -1; }
 @media (max-width: 400px) { .method-stage-list { grid-template-columns: 1fr; } }
+
+/* Sanitised application-assessment evidence spotlight. */
+.supporting-evidence { margin: 36px 0; padding: clamp(20px, 3vw, 36px); border: 1px solid var(--line-strong); background: var(--panel); }
+.supporting-evidence .section-kicker { margin-bottom: 16px; color: var(--signal); font-size: 9px; line-height: 1.7; }
+.operation-case .supporting-evidence > h4 { font: 600 clamp(22px, 2.5vw, 32px)/1.15 var(--sans); text-transform: none; letter-spacing: -.025em; }
+.retest-progression { margin: 24px 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.retest-progression li { padding-top: 16px; border-top: 2px solid var(--line-strong); }
+.retest-progression li:last-child { border-color: var(--status); }
+.retest-progression span { display: block; margin-bottom: 12px; color: var(--muted); font: 9px/1.6 var(--mono); letter-spacing: .06em; }
+.retest-progression strong { color: var(--text); font-size: 17px; }
+.retest-progression p { font-size: 13px; margin-bottom: 0; }
+.supporting-evidence .text-link { margin-top: 24px; }
+@media (max-width: 760px) { .retest-progression { grid-template-columns: 1fr; } }

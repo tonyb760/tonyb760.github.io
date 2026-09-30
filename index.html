@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://tonyb760.github.io/assets/bhavesh-manhar.webp" />
   <title>Bhavesh Manhar // Red Team Operator</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20261001-3" />
+  <link rel="stylesheet" href="./styles.css?v=20261001-4" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -225,6 +225,28 @@
             <p>Findings were consolidated into exploitable attack scenarios, helping application owners understand what an attacker could achieve, which control failed and what change would break the chain.</p>
           </div>
         </div>
+
+        <aside class="supporting-evidence" aria-labelledby="api-retest-title">
+          <span class="section-kicker">SUPPORTING EVIDENCE // ANONYMISED UAT API ASSESSMENT</span>
+          <h4 id="api-retest-title">From repeated acceptance to duplicate rejection.</h4>
+          <p>Saved assessment and retest records show a business-operation replay finding progressing from observed duplicate acceptance, through an inconclusive retest, to recorded closure after an explicit duplicate-rejection response.</p>
+          <ol class="retest-progression" aria-label="Recorded finding progression">
+            <li><span>INITIAL ASSESSMENT</span><strong>Repeat accepted</strong><p>Identical requests were recorded as accepted more than once.</p></li>
+            <li><span>FIRST RETEST</span><strong>Inconclusive</strong><p>Behaviour was not deterministically reproduced; the finding remained unclosed.</p></li>
+            <li><span>LATER RETEST</span><strong>Duplicate rejected</strong><p>An existing transaction identifier produced an explicit rejection; the tracker recorded closure.</p></li>
+          </ol>
+          <details class="operation-details">
+            <summary>Inspect sanitised evidence <span aria-hidden="true">+</span></summary>
+            <div class="operation-detail-body">
+              <section><h4>Observation</h4><p>The original assessment recorded repeated acceptance of an identical confirmation request, including reuse of a business reference with changed client-supplied identifiers.</p></section>
+              <section><h4>Potential impact</h4><p>Duplicate processing, repeated notifications or reconciliation errors, depending on downstream behaviour. Accepted API responses alone do not establish duplicate financial posting or settlement.</p></section>
+              <section><h4>Closure evidence</h4><p>The later retest recorded an explicit duplicate-rejection response for an existing transaction identifier. The saved tracker marked the finding closed and noted that an idempotency control was observed.</p></section>
+              <section><h4>Remediation direction</h4><p>Enforce backend idempotency using stable operation identifiers and business-reference checks, handle repeats consistently and retain duplicate-replay cases in regression testing.</p></section>
+              <section><h4>Evidence limits</h4><p>This is a rewritten supporting example from saved UAT assessment records. Closure applies to the recorded test case and window; it does not establish coverage of every replay variation. Original requests, response bodies, client details and report files are excluded.</p></section>
+            </div>
+          </details>
+          <a class="text-link" href="./assets/api-replay-retest-example.md" download>Download sanitised retest excerpt <span aria-hidden="true">↓</span></a>
+        </aside>
 
         <div class="operation-path">
           <h4>Attack path assessed</h4>
